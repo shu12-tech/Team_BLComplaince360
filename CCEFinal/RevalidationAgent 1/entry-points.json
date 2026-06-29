@@ -1,0 +1,103 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "/content/agent.json",
+      "type": "agent",
+      "uniqueId": "2e0f0092-501a-4f67-b8b5-918be363ee06",
+      "input": {
+        "type": "object",
+        "properties": {
+          "RunId": {
+            "type": "string",
+            "description": "Unique identifier for the compliance run. Example: SOC2-2026-001. Pass through to output exactly as received. Do not modify."
+          },
+          "ControlId": {
+            "type": "string",
+            "description": "SOC 2 Trust Services Criteria control identifier. Example: CC6.1. Pass through to output exactly as received."
+          },
+          "RiskLevel": {
+            "type": "string",
+            "description": "Risk level of the original compliance finding. Allowed values: LOW, HIGH, PASS.",
+            "enum": [
+              "LOW",
+              "HIGH",
+              "PASS"
+            ]
+          },
+          "OriginalFinding": {
+            "type": "string",
+            "description": "Description of the original SOC 2 compliance finding that was identified and required remediation."
+          },
+          "RemediationPerformed": {
+            "type": "string",
+            "description": "Description of the remediation actions that were performed to address the original finding."
+          },
+          "CurrentControlState": {
+            "type": "string",
+            "description": "Description of the current state of the control after remediation was performed. Used to determine whether the finding is resolved."
+          }
+        },
+        "required": [
+          "RunId",
+          "ControlId",
+          "RiskLevel",
+          "OriginalFinding",
+          "RemediationPerformed",
+          "CurrentControlState"
+        ]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "RunId": {
+            "type": "string",
+            "description": "Pass-through of the input RunId value. Do not modify."
+          },
+          "ControlId": {
+            "type": "string",
+            "description": "Pass-through of the input ControlId value. Do not modify."
+          },
+          "ValidationStatus": {
+            "type": "string",
+            "description": "Result of the revalidation assessment. PASS if remediation fully resolves the finding. FAIL if remediation does not fully resolve the finding.",
+            "enum": [
+              "PASS",
+              "FAIL"
+            ]
+          },
+          "ResidualRisk": {
+            "type": "string",
+            "description": "Remaining risk level after remediation. LOW if fully resolved, MEDIUM if partially resolved, HIGH if remediation failed.",
+            "enum": [
+              "LOW",
+              "MEDIUM",
+              "HIGH"
+            ]
+          },
+          "ClosureRecommendation": {
+            "type": "string",
+            "description": "Recommended action based on ValidationStatus. CLOSE_FINDING if PASS, ESCALATE if FAIL.",
+            "enum": [
+              "CLOSE_FINDING",
+              "ESCALATE"
+            ]
+          },
+          "ValidationNotes": {
+            "type": "string",
+            "description": "Audit-ready validation notes summarizing the revalidation outcome, evidence reviewed, residual risk assessment, and closure or escalation recommendation."
+          }
+        },
+        "required": [
+          "RunId",
+          "ControlId",
+          "ValidationStatus",
+          "ResidualRisk",
+          "ClosureRecommendation",
+          "ValidationNotes"
+        ]
+      }
+    }
+  ]
+}

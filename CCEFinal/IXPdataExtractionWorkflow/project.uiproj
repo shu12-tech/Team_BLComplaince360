@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Process",
+  "Name": "IXPdataExtractionWorkflow",
+  "Description": null,
+  "MainFile": "Main.xaml"
+}

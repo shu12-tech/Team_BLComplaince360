@@ -1,0 +1,54 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "3ac5fd97-83f5-4461-a3d2-a230e999cec4",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "RecipientEmail": {
+            "type": "string",
+            "x-default-expression": "\"priyanka.m@boundaryless.com\"",
+            "default": "priyanka.m@boundaryless.com"
+          },
+          "RunId": {
+            "type": "string",
+            "x-default-expression": "\"123\"",
+            "default": "123"
+          },
+          "RiskLevel": {
+            "type": "string",
+            "x-default-expression": "\"HIGH\"",
+            "default": "HIGH"
+          },
+          "ValidationStatus": {
+            "type": "string",
+            "x-default-expression": "\"PASS\"",
+            "default": "PASS"
+          },
+          "AuditReadiness": {
+            "type": "string",
+            "x-default-expression": "\"92\"",
+            "default": "92"
+          },
+          "EvidencePackagePath": {
+            "type": "string",
+            "x-default-expression": "\"GenerateEvidencePackage\\EvidencePackage_.html\"",
+            "default": "GenerateEvidencePackage\\EvidencePackage_.html"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "EmailSent": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  ]
+}

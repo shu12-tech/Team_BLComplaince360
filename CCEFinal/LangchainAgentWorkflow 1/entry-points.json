@@ -1,0 +1,40 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "2c9aff65-ddc3-419f-9d2a-966eb482da2d",
+      "type": "Process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "Data": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "Finding": {
+            "type": "string"
+          },
+          "ControlId": {
+            "type": "string"
+          },
+          "ConfidenceScore": {
+            "type": "string"
+          },
+          "RiskLevel": {
+            "type": "string"
+          },
+          "RunId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}

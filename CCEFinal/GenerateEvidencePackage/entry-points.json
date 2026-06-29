@@ -1,0 +1,78 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "1cb42ca4-38aa-4fc3-b55c-b064f936bd24",
+      "type": "Process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "In_RunId": {
+            "type": "string"
+          },
+          "In_ControlId": {
+            "type": "string"
+          },
+          "In_RiskLevel": {
+            "type": "string"
+          },
+          "In_Finding": {
+            "type": "string"
+          },
+          "In_RemediationPerformed": {
+            "type": "string"
+          },
+          "In_ValidationStatus": {
+            "type": "string",
+            "x-default-expression": "\"PASS\"",
+            "default": "PASS"
+          },
+          "In_ServiceNowIncident": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "Out_EvidencePackagePath": {
+            "$ref": "#/definitions/job-attachment"
+          }
+        },
+        "definitions": {
+          "job-attachment": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "type": "string",
+                "description": "Orchestrator attachment key"
+              },
+              "FullName": {
+                "type": "string",
+                "description": "File name"
+              },
+              "MimeType": {
+                "type": "string",
+                "description": "The MIME type of the content, such as \"application/json\" or \"image/png"
+              },
+              "Metadata": {
+                "type": "object",
+                "description": "Dictionary<string, string> of metadata",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "ID"
+            ],
+            "x-uipath-resource-kind": "JobAttachment"
+          }
+        }
+      }
+    }
+  ]
+}

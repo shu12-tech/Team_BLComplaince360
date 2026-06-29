@@ -1,0 +1,54 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "d01eaa21-cc23-4306-8965-3cecc98113eb",
+      "type": "Process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "IO_ControlID": {
+            "type": "string"
+          },
+          "IO_Findings": {
+            "type": "string"
+          },
+          "In_IncidentID": {
+            "type": "string",
+            "x-default-expression": "\"ae01e913c369039433d278edd401316d\"",
+            "default": "ae01e913c369039433d278edd401316d"
+          },
+          "IO_RunID": {
+            "type": "string"
+          },
+          "IO_RiskLevel": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "IO_ControlID": {
+            "type": "string"
+          },
+          "IO_Findings": {
+            "type": "string"
+          },
+          "IO_RunID": {
+            "type": "string"
+          },
+          "IO_RiskLevel": {
+            "type": "string"
+          },
+          "Out_ConfidenceScore": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}

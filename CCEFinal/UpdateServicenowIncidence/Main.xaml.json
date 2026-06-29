@@ -1,0 +1,69 @@
+{
+  "DisplayName": "Main",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "In_ControlID",
+      "DisplayName": "In_ControlID",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "CE 5.1",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "In_RiskLevel",
+      "DisplayName": "In_RiskLevel",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "LOW",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "In_Findings",
+      "DisplayName": "In_Findings",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "1 Account not disabled.",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "In_RunID",
+      "DisplayName": "In_RunID",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "123",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "In_IncidentID",
+      "DisplayName": "In_IncidentID",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "INC0010031",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

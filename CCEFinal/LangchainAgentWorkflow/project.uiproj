@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Process",
+  "Name": "LangchainAgentWorkflow",
+  "Description": null,
+  "MainFile": "Main.xaml"
+}
