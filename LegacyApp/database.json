@@ -1,0 +1,30 @@
+[
+    {
+        "username": "admin",
+        "fullname": "System Administrator",
+        "email": "admin@enterprise.local",
+        "role": "SuperAdmin",
+        "status": "Active"
+    },
+    {
+        "username": "jane.smith",
+        "fullname": "Jane Smith",
+        "email": "jane.smith@enterprise.local",
+        "role": "HR Manager",
+        "status": "Active"
+    },
+    {
+        "username": "john.doe",
+        "fullname": "John Doe",
+        "email": "john.doe@enterprise.local",
+        "role": "Software Engineer",
+        "status": "Active"
+    },
+    {
+        "username": "bob.jones",
+        "fullname": "Bob Jones",
+        "email": "bob.jones@enterprise.local",
+        "role": "Financial Analyst",
+        "status": "Active"
+    }
+]

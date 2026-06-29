@@ -1,0 +1,5 @@
+Username,FullName,Email,Status,TerminationDate
+admin,System Administrator,admin@enterprise.local,Active,N/A
+jane.smith,Jane Smith,jane.smith@enterprise.local,Active,N/A
+bob.jones,Bob Jones,bob.jones@enterprise.local,Active,N/A
+john.doe,John Doe,john.doe@enterprise.local,Terminated,2026-04-15
