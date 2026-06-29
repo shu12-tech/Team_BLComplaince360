@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "AutoRemediationAgent",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "e2d56ad1-4130-49e5-9d3e-49458370529f",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "AutoRemediationAgent",
+      "description": null
+    },
+    "locks": [],
+    "key": "ddc707df-86e1-477f-84bb-1dd9a3f06e3f"
+  }
+}

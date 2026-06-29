@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "CSOReviewApp",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "53df6e55-3275-45b7-91fd-1982a03672ac",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "CSOReviewApp",
+      "description": null
+    },
+    "locks": [],
+    "key": "26a94cf8-4e4e-42f8-bb62-be56dcaf9f60"
+  }
+}

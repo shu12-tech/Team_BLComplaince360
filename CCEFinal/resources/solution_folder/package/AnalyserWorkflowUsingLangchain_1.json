@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "AnalyserWorkflowUsingLangchain 1",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "e861037d-666f-4348-ad48-d24f98c03e13",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "AnalyserWorkflowUsingLangchain 1",
+      "description": null
+    },
+    "locks": [],
+    "key": "85867377-840e-450e-85a8-3d9240bb5a28"
+  }
+}

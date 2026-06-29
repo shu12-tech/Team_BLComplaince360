@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "CreateServicenowIncidence",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "a5e2fe5b-d54c-4c24-aff6-22d0ab97b53f",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "CreateServicenowIncidence",
+      "description": null
+    },
+    "locks": [],
+    "key": "84b6808d-955e-42db-9dfa-a309d82bc594"
+  }
+}

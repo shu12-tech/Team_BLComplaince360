@@ -1,0 +1,48 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "14dc37d0-09ae-4b1c-9afc-a9fd347469e0",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "RunId": {
+            "type": "string"
+          },
+          "RiskLevel": {
+            "type": "string"
+          },
+          "Finding": {
+            "type": "string",
+            "x-default-expression": "\"54\"",
+            "default": "54"
+          },
+          "ControlId": {
+            "type": "string",
+            "x-default-expression": "\"123\"",
+            "default": "123"
+          },
+          "RemediationWorkflow": {
+            "type": "string",
+            "x-default-expression": "\"VerifyBackupPolicy\"",
+            "default": "VerifyBackupPolicy"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "RemediationDetails": {
+            "type": "string"
+          },
+          "RemediationStatus": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}

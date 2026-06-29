@@ -1,0 +1,197 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.In_ControlID="CE 5.1" this:Main.In_RiskLevel="LOW" this:Main.In_Findings="1 Account not disabled." this:Main.In_RunID="123"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+ xmlns:this="clr-namespace:"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C3EEC023CE4_curated_incident.Bundle;assembly=C3EEC023CE4_curated_.j5R5724QOxP1x5Q3H2suPb72"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_ControlID" Type="InArgument(x:String)" />
+    <x:Property Name="In_RiskLevel" Type="InArgument(x:String)" />
+    <x:Property Name="In_Findings" Type="InArgument(x:String)" />
+    <x:Property Name="In_RunID" Type="InArgument(x:String)" />
+    <x:Property Name="Out_IncidentID" Type="OutArgument(x:String)" />
+  </x:Members>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="33">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C3EEC023CE4_curated_incident.Bundle</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>C3EEC023CE4_curated_.j5R5724QOxP1x5Q3H2suPb72</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="528.6,386.05666666666673" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strIncidentNumber" />
+      <Variable x:TypeArguments="x:String" Name="strDescription" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap:VirtualizedContainerService.HintSize="449.6,68" sap2010:WorkflowViewState.IdRef="ManualTrigger_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ManualTrigger>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Creating a serviceNow Incident.">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </WriteLine>
+    <Assign sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strDescription]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(In_RiskLevel = "HIGH", "SOC 2 Compliance Assessment has identified a HIGH-RISK compliance violation requiring immediate attention." + Environment.NewLine + Environment.NewLine + "Run ID: " + In_RunID + Environment.NewLine + "Control ID: " + In_ControlID + Environment.NewLine + "Risk Level: HIGH" + Environment.NewLine + Environment.NewLine + "Finding:" + Environment.NewLine + In_Findings + Environment.NewLine + Environment.NewLine + "Workflow Actions:" + Environment.NewLine + "• Human Review Required: Yes" + Environment.NewLine + "• Auto Remediation: Yes (Post Approval)" + Environment.NewLine + "• Approval Required: Yes" + Environment.NewLine + "• Revalidation After Fix: Yes" + Environment.NewLine + Environment.NewLine + "Generated by UiPath Continuous Compliance Engine.", "SOC 2 Compliance Assessment has identified a LOW-RISK compliance gap." + Environment.NewLine + Environment.NewLine + "Run ID: " + In_RunID + Environment.NewLine + "Control ID: " + In_ControlID + Environment.NewLine + "Risk Level: LOW" + Environment.NewLine + Environment.NewLine + "Finding:" + Environment.NewLine + In_Findings + Environment.NewLine + Environment.NewLine + "Workflow Actions:" + Environment.NewLine + "• Human Review Required: No" + Environment.NewLine + "• Auto Remediation: Yes" + Environment.NewLine + "• Approval Required: No" + Environment.NewLine + "• Revalidation After Fix: Yes" + Environment.NewLine + Environment.NewLine + "Generated by UiPath Continuous Compliance Engine.")]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <isactr:ConnectorActivity Configuration="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" ConnectionId="dfae8d5f-87dc-4315-9180-393eec023ce4" DisplayName="Create Incident" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="06ca824f-f978-3008-a925-dee245fc6614">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="caller_id" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">priyanka.m@boundaryless.com</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="short_description" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">["SOC 2 Violation -RunID : "+In_RunID]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="description" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">[strDescription]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="urgency" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="assigned_to" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">Incident.Manager</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_number" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[strIncidentNumber]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="Jit_curated_incident" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:curated_incident" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_sys_id" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[Out_IncidentID]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </isactr:ConnectorActivity>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;ServiceNow Incident [&quot; &amp; strIncidentNumber &amp; &quot;] created for RunID : &quot; &amp; In_RunID &amp; vbNewLine &amp; &quot;Incident ID: &quot; &amp; Out_IncidentID]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+  </Sequence>
+</Activity>

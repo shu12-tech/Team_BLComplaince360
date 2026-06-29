@@ -1,0 +1,37 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "SOC2 Officer Review",
+    "kind": "app",
+    "type": "vB Action",
+    "apiVersion": "apps.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "SOC2 Officer Review",
+        "kind": "appVersion"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "SOC2 Officer Review",
+      "description": null,
+      "type": "Regular",
+      "appSystemName": "ID1c4c042901e241649449ddce55380fa6",
+      "version": "1.0.0",
+      "appVersionRef": {
+        "name": "SOC2 Officer Review",
+        "key": "ID33923e288daf40d39d0061b007393bd1"
+      },
+      "actionSchema": "{\u0022version\u0022:1,\u0022key\u0022:\u002256539db7-8fcc-4b47-bd67-f2be911710bc\u0022,\u0022__isDeleted\u0022:false,\u0022dateLastModified\u0022:\u00222026-06-17T10:32:48.027Z\u0022,\u0022description\u0022:\u0022Action Schema\u0022,\u0022id\u0022:\u0022IDad1b4f35f3674467bf19b7c383112803\u0022,\u0022inOuts\u0022:[],\u0022inputs\u0022:[{\u0022name\u0022:\u0022Findings\u0022,\u0022type\u0022:\u0022System.String\u0022,\u0022isList\u0022:false,\u0022typeNamespace\u0022:\u0022system\u0022,\u0022customType\u0022:null,\u0022required\u0022:true,\u0022properties\u0022:[],\u0022collectionDataType\u0022:null,\u0022description\u0022:\u0022Detailed observations and results from the process run.\u0022,\u0022key\u0022:\u00221563615f-420d-4581-b8d2-8621b5b93a18\u0022},{\u0022name\u0022:\u0022RunID\u0022,\u0022key\u0022:\u00226363b56c-1b0f-4dcd-a3a5-f52953914ab9\u0022,\u0022required\u0022:true,\u0022customType\u0022:null,\u0022properties\u0022:[],\u0022version\u0022:0,\u0022type\u0022:\u0022System.String\u0022,\u0022typeNamespace\u0022:\u0022system\u0022,\u0022isList\u0022:false,\u0022collectionDataType\u0022:null}],\u0022name\u0022:\u0022ActionSchema\u0022,\u0022outcomes\u0022:[{\u0022name\u0022:\u0022Approve\u0022,\u0022type\u0022:\u0022System.String\u0022,\u0022isList\u0022:false,\u0022typeNamespace\u0022:\u0022system\u0022,\u0022customType\u0022:null,\u0022required\u0022:false,\u0022properties\u0022:[],\u0022collectionDataType\u0022:null,\u0022description\u0022:\u0022Approve the findings and proceed.\u0022,\u0022key\u0022:\u0022fdfb55e4-518a-4088-b0df-bae21c05f18d\u0022},{\u0022name\u0022:\u0022Escalate\u0022,\u0022type\u0022:\u0022System.String\u0022,\u0022isList\u0022:false,\u0022typeNamespace\u0022:\u0022system\u0022,\u0022customType\u0022:null,\u0022required\u0022:false,\u0022properties\u0022:[],\u0022collectionDataType\u0022:null,\u0022description\u0022:\u0022Escalate the findings for further review.\u0022,\u0022key\u0022:\u00222ed6102b-66a2-4723-b36d-cea98e37bf73\u0022}],\u0022outputs\u0022:[{\u0022name\u0022:\u0022OfficerComment\u0022,\u0022type\u0022:\u0022System.String\u0022,\u0022isList\u0022:false,\u0022typeNamespace\u0022:\u0022system\u0022,\u0022customType\u0022:null,\u0022required\u0022:false,\u0022properties\u0022:[],\u0022collectionDataType\u0022:null,\u0022description\u0022:\u0022Comments provided by the officer regarding the findings.\u0022,\u0022key\u0022:\u00221cac7cbf-d7e3-4e49-9f18-7e9007884f70\u0022},{\u0022name\u0022:\u0022OfficerDecision\u0022,\u0022type\u0022:\u0022System.String\u0022,\u0022isList\u0022:false,\u0022typeNamespace\u0022:\u0022system\u0022,\u0022customType\u0022:null,\u0022required\u0022:false,\u0022properties\u0022:[],\u0022collectionDataType\u0022:null,\u0022description\u0022:\u0022Additional details or rationale for the officer\u0027s decision.\u0022,\u0022key\u0022:\u002274ea6c2f-a0a1-4164-8246-d68cbb4ddfcd\u0022}],\u0022Description\u0022:\u0022Action schema for reviewing process run findings and making a decision.\u0022,\u0022actionSchemaGenerationSource\u0022:\u0022aiAssistedManual\u0022}"
+    },
+    "locks": [],
+    "key": "68823d4f-668c-479e-ba79-3d1f64750835"
+  }
+}

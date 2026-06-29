@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "GenerateEvidencePackage",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "e8bb7344-460c-4179-9a5a-9ef830ebcad9",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "GenerateEvidencePackage",
+      "description": null
+    },
+    "locks": [],
+    "key": "d3fc90a8-b9f1-48df-851f-75b8351199dc"
+  }
+}

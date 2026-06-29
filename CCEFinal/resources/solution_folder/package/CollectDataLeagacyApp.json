@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "CollectDataLeagacyApp",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "9dc35b92-55d4-4e51-8b3a-41cd77721a4c",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "CollectDataLeagacyApp",
+      "description": null
+    },
+    "locks": [],
+    "key": "e8c9410f-ed00-41d8-bcb0-71bfe3070d5b"
+  }
+}

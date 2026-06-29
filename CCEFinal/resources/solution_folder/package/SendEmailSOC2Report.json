@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "SendEmailSOC2Report",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "4df44c69-4c56-4d15-8f72-b111e303d45b",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "SendEmailSOC2Report",
+      "description": null
+    },
+    "locks": [],
+    "key": "a38e534b-8bc4-4ce9-9a33-fd3c6e31479c"
+  }
+}

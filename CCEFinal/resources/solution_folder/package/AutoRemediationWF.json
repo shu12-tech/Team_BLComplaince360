@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "AutoRemediationWF",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "ead9a059-9194-422f-98f0-86db5a524c32",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "AutoRemediationWF",
+      "description": null
+    },
+    "locks": [],
+    "key": "407c3137-eca8-4dbe-921d-32e5a73d8d3a"
+  }
+}

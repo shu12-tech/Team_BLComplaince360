@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "IXPdataExtractionWorkflow 1",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "037d7c8c-111b-4d78-ab61-c7c6056bdb1f",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "IXPdataExtractionWorkflow 1",
+      "description": null
+    },
+    "locks": [],
+    "key": "a0a491b4-548e-429d-b353-1ed8abc5bb87"
+  }
+}

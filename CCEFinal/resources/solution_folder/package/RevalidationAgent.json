@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "RevalidationAgent",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "df922151-4b60-4f1e-a6ea-8038f8c0429b",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "RevalidationAgent",
+      "description": null
+    },
+    "locks": [],
+    "key": "c4d9c1b7-13f3-4837-9e2c-845c8fc4081d"
+  }
+}

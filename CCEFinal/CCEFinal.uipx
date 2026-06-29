@@ -1,0 +1,123 @@
+{
+  "DocVersion": "1.0.0",
+  "StudioMinVersion": "2025.04.0",
+  "SolutionId": "79e896c7-87cf-4f35-3c1e-08ded545693e",
+  "Projects": [
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "SendEmailSOC2Report/project.uiproj",
+      "Id": "4df44c69-4c56-4d15-8f72-b111e303d45b"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "GenerateEvidencePackage/project.uiproj",
+      "Id": "e8bb7344-460c-4179-9a5a-9ef830ebcad9"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "LangchainAgentWorkflow 1/project.uiproj",
+      "Id": "60f45a3b-edce-4807-bf53-6a05448ce131"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "APIdataExtractionWorkflow/project.uiproj",
+      "Id": "42ebc721-b396-4dea-b7e7-52aba35bc01c"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "AnalyserWorkflowUsingLangchain 1/project.uiproj",
+      "Id": "e861037d-666f-4348-ad48-d24f98c03e13"
+    },
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "AutoRemediationAgent/project.uiproj",
+      "Id": "e2d56ad1-4130-49e5-9d3e-49458370529f"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "IXPdataExtractionWorkflow 1/project.uiproj",
+      "Id": "037d7c8c-111b-4d78-ab61-c7c6056bdb1f"
+    },
+    {
+      "Type": "WebApp",
+      "ProjectRelativePath": "CSOReviewApp/project.uiproj",
+      "Id": "53df6e55-3275-45b7-91fd-1982a03672ac"
+    },
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "AutoRemediationAgent 1/project.uiproj",
+      "Id": "eb34e20d-f927-410d-affb-fd5b3dbabb46"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "IXPdataExtractionWorkflow/project.uiproj",
+      "Id": "501fefc2-d8d3-490c-9b3c-ee2164ca29f7"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "AnalyserWorkflowUsingLangchain/project.uiproj",
+      "Id": "9c9dd4ae-6866-4126-a042-cd45b61c2da1"
+    },
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "RevalidationAgent 1/project.uiproj",
+      "Id": "709cbcd4-cedb-48ba-8614-949f4cfbb859"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "CloseIncidentServiceNow/project.uiproj",
+      "Id": "6a24a213-5bf5-4c2c-9d37-99eed4aa8b38"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "LangchainAgentWorkflow/project.uiproj",
+      "Id": "1186aae3-fd98-4f66-b2ad-19fe05a4bd9c"
+    },
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "RevalidationAgent/project.uiproj",
+      "Id": "df922151-4b60-4f1e-a6ea-8038f8c0429b"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "UpdateServicenowIncidence/project.uiproj",
+      "Id": "25fad1ea-4b13-49c0-9959-0712a704d12e"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "AutoRemediationWF/project.uiproj",
+      "Id": "ead9a059-9194-422f-98f0-86db5a524c32"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "CollectDataLeagacyApp/project.uiproj",
+      "Id": "9dc35b92-55d4-4e51-8b3a-41cd77721a4c"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "CreateServicenowIncidence/project.uiproj",
+      "Id": "a5e2fe5b-d54c-4c24-aff6-22d0ab97b53f"
+    },
+    {
+      "Type": "ProcessOrchestration",
+      "ProjectRelativePath": "Agentic Process/project.uiproj",
+      "Id": "12af12e3-171f-40d2-951d-b2e5e1dcc1ad"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "RPA Workflow/project.uiproj",
+      "Id": "491f154f-9331-4413-9e42-6c2ba074ace4"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "CollectDataLeagacyApp 1/project.uiproj",
+      "Id": "950eed66-ebba-4fc4-ae7c-f35fadfb6ec0"
+    },
+    {
+      "Type": "ProcessOrchestration",
+      "ProjectRelativePath": "Maestro BPMN/project.uiproj",
+      "Id": "ff185fcc-0ced-4dfe-ae7f-fa29171ccb49"
+    }
+  ],
+  "AutomationHubIdeaUrl": null
+}

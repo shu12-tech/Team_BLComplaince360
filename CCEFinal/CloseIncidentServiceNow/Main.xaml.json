@@ -1,0 +1,33 @@
+{
+  "DisplayName": "Main",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "In_IncidentID",
+      "DisplayName": "In_IncidentID",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "ae01e913c369039433d278edd401316d",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "In_RunId",
+      "DisplayName": "In_RunId",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "1234",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "APIdataExtractionWorkflow",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "42ebc721-b396-4dea-b7e7-52aba35bc01c",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "APIdataExtractionWorkflow",
+      "description": null
+    },
+    "locks": [],
+    "key": "a30ca2a5-84ac-459a-aab2-6408d756dce1"
+  }
+}

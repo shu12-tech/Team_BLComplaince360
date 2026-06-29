@@ -1,0 +1,38 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "SOC2 Officer Review",
+    "kind": "appVersion",
+    "apiVersion": "apps.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [
+      {
+        "name": "SOC2 Officer Review.uiapp",
+        "kind": "appVersion",
+        "url": "https://staging.uipath.com/d5b0c1da-5468-4ba4-8c98-36218b0a60a9/apps_/default/api/v1/default/models/ID1c4c042901e241649449ddce55380fa6/publish/versions/1/package",
+        "key": "ID33923e288daf40d39d0061b007393bd1"
+      }
+    ],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "SOC2 Officer Review",
+      "description": "",
+      "appSystemName": "ID1c4c042901e241649449ddce55380fa6",
+      "version": "1.0.0",
+      "isAppPublic": false,
+      "expressionLanguage": "VB",
+      "publishNote": null,
+      "uiappFile": "ID33923e288daf40d39d0061b007393bd1",
+      "uiappFileName": "SOC2 Officer Review.uiapp",
+      "isUnifiedProject": false
+    },
+    "locks": [],
+    "key": "ID33923e288daf40d39d0061b007393bd1"
+  }
+}

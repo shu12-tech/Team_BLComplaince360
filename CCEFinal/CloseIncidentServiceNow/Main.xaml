@@ -1,0 +1,238 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.In_IncidentID="ae01e913c369039433d278edd401316d" this:Main.In_RunId="1234" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_IncidentID" Type="InArgument(x:String)" />
+    <x:Property Name="In_RunId" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="619,389.25666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strClosureComment" />
+      <Variable x:TypeArguments="x:String" Default="Passed" Name="strValidationStatus" />
+      <Variable x:TypeArguments="x:String" Default="All compliance gaps have been remediated and validated." Name="strClosureNotes" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap:VirtualizedContainerService.HintSize="449.6,68" sap2010:WorkflowViewState.IdRef="ManualTrigger_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ManualTrigger>
+    <ui:LogMessage DisplayName="Log Incident Number" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Processing ServiceNow incident: &quot; + In_IncidentID + &quot; | Run ID: &quot; + In_RunId]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <Assign DisplayName="Build Closure Comment" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strClosureComment]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["SOC 2 Remediation Completed Successfully" + Environment.NewLine + Environment.NewLine + "Run ID: " + In_RunId + Environment.NewLine + "Validation Status: " + strValidationStatus + Environment.NewLine + "Closure Notes: " + strClosureNotes + Environment.NewLine + Environment.NewLine + "Remediation was completed successfully." + Environment.NewLine + Environment.NewLine + "Generated by UiPath Continuous Compliance Engine."]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <TryCatch DisplayName="Try Catch - Update ServiceNow Incident" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="449.6,626.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <isactr:ConnectorActivity Configuration="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" ConnectionId="dfae8d5f-87dc-4315-9180-393eec023ce4" DisplayName="Update ServiceNow Incident" sap:VirtualizedContainerService.HintSize="416,518.4" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="3b6294a7-3542-3d05-97fa-b1a665044fc4">
+            <isactr:ConnectorActivity.FieldObjects>
+              <isactr:FieldObject Name="incidentId" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">[In_IncidentID]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Jit_curated_incident" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <OutArgument x:TypeArguments="x:Object" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="close_code" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">Solved Permanently</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="close_notes" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">[strClosureComment]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="closed_at" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="s:DateTimeOffset">[Now]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="short_description" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">["SOC 2 Remediation Completed - RunID: " + In_RunId]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="description" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">[strClosureComment]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="state" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:Int32">7</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+            </isactr:ConnectorActivity.FieldObjects>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </isactr:ConnectorActivity>
+          <ui:LogMessage DisplayName="Log Success" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ServiceNow Incident [&quot; + In_IncidentID + &quot;] closed successfully for RunID: &quot; + In_RunId + &quot; | Close Code: Solved Permanently&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="672,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="449.6,282.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Error" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Failed to close ServiceNow Incident [&quot; + In_IncidentID + &quot;] for RunID: &quot; + In_RunId + &quot; | Error: &quot; + exception.Message]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <Rethrow sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Rethrow_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Rethrow>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

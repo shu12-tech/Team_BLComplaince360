@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "LangchainAgentWorkflow",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "1186aae3-fd98-4f66-b2ad-19fe05a4bd9c",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "LangchainAgentWorkflow",
+      "description": null
+    },
+    "locks": [],
+    "key": "fe06668f-bf1b-4bd8-a1bf-e81e25fd3aab"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "d01eaa21-cc23-4306-8965-3cecc98113eb",
+      "type": "Process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "In_ControlID": {
+            "type": "string",
+            "x-default-expression": "\"CE 5.1\"",
+            "default": "CE 5.1"
+          },
+          "In_RiskLevel": {
+            "type": "string",
+            "x-default-expression": "\"LOW\"",
+            "default": "LOW"
+          },
+          "In_Findings": {
+            "type": "string",
+            "x-default-expression": "\"1 Account not disabled.\"",
+            "default": "1 Account not disabled."
+          },
+          "In_RunID": {
+            "type": "string",
+            "x-default-expression": "\"123\"",
+            "default": "123"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "Out_IncidentID": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}

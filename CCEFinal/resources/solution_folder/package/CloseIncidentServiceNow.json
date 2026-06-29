@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "CloseIncidentServiceNow",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "6a24a213-5bf5-4c2c-9d37-99eed4aa8b38",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "CloseIncidentServiceNow",
+      "description": null
+    },
+    "locks": [],
+    "key": "7fa78d8d-1f71-41f5-b38b-8666b7737606"
+  }
+}

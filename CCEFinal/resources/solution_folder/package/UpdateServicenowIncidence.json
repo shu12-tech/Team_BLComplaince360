@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "UpdateServicenowIncidence",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "25fad1ea-4b13-49c0-9959-0712a704d12e",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "UpdateServicenowIncidence",
+      "description": null
+    },
+    "locks": [],
+    "key": "b8103d5c-8848-4151-b5bc-3a3eccf03864"
+  }
+}

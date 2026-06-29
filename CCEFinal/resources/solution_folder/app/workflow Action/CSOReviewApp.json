@@ -1,0 +1,45 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "CSOReviewApp",
+    "kind": "app",
+    "type": "workflow Action",
+    "apiVersion": "apps.uipath.com/v1",
+    "projectKey": "53df6e55-3275-45b7-91fd-1982a03672ac",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "CSOReviewApp",
+        "kind": "appVersion"
+      },
+      {
+        "name": "CSOReviewApp",
+        "kind": "process"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "CSOReviewApp",
+      "description": null,
+      "type": "workflow Action",
+      "version": null,
+      "appSystemName": null,
+      "appVersionRef": {
+        "key": "c75b6a52-163e-45cf-8c0f-ff4937b08acc"
+      },
+      "codeBehindProcess": {
+        "key": "e6613f03-243e-424a-b697-a292da934bba"
+      },
+      "actionSchema": null,
+      "manualActivationActions": null
+    },
+    "locks": [],
+    "key": "ecb3f74a-8eab-4bd1-b40a-bcd387652edd"
+  }
+}
