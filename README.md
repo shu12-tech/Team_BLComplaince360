@@ -210,26 +210,15 @@ The compliance validation process consists of the following steps:
 ## Repository Structure
 
 ```
-Team_BLCompliance360/
+Team_BLCompliance360
 │
+├── CCEFinal/
+├── ComplianceAPI/
 ├── ComplianceAgent/
-│   ├── agent.py
-│   ├── api.py
-│   ├── prompt.txt
-│   └── data/
-│
-├── UiPath/
-│   ├── Main.xaml
-│   ├── project.json
-│   └── Workflows/
-│
-├── requirements.txt
-├── README.md
+├── LegacyApp/
 ├── LICENSE
-└── .gitignore
+└── README.md
 ```
-
----
 
 ## Getting Started
 
