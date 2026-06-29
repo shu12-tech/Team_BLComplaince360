@@ -1,0 +1,30 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "cf52411a-fd09-4050-b3d0-60973cf5c807",
+      "type": "Process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "jsonString": {
+            "type": "string",
+            "x-default-expression": "\"{ \"\"id\"\": \"\"AR-004\"\", \"\"category\"\": \"\"Access Review\"\", \"\"resource\"\": \"\"AdminFullAccess\"\", \"\"severity\"\": \"\"Critical\"\", \"\"status\"\": \"\"FAIL\"\", \"\"issue\"\": \"\"Policy 'AdminFullAccess' grants unrestricted access (*) to all resources (*), creating a significant security risk.\"\", \"\"recommendation\"\": \"\"Restrict the 'AdminFullAccess' policy to least privilege principles by limiting actions and resources.\"\" }\"",
+            "default": "{ \"id\": \"AR-004\", \"category\": \"Access Review\", \"resource\": \"AdminFullAccess\", \"severity\": \"Critical\", \"status\": \"FAIL\", \"issue\": \"Policy 'AdminFullAccess' grants unrestricted access (*) to all resources (*), creating a significant security risk.\", \"recommendation\": \"Restrict the 'AdminFullAccess' policy to least privilege principles by limiting actions and resources.\" }"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "outstring": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "resource": "app",
+      "key": "SOC2 Officer Review",
+      "id": "appSOC2 Officer Review",
+      "value": {
+        "name": {
+          "defaultValue": "SOC2 Officer Review",
+          "isExpression": false,
+          "displayName": "App name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Officer Reviews SOC 2 Findings in Action Center",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "CreateServicenowIncidence",
+      "id": "processCreateServicenowIncidence",
+      "value": {
+        "name": {
+          "defaultValue": "CreateServicenowIncidence",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Create ServiceNow Incidence",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "AutoRemediationAgent",
+      "id": "processAutoRemediationAgent",
+      "value": {
+        "name": {
+          "defaultValue": "AutoRemediationAgent",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Decide Remediation to Fix SOC 2 Gaps",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "GenerateEvidencePackage",
+      "id": "processGenerateEvidencePackage",
+      "value": {
+        "name": {
+          "defaultValue": "GenerateEvidencePackage",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Generate SOC 2 Evidence Package",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "UpdateServicenowIncidence",
+      "id": "processUpdateServicenowIncidence",
+      "value": {
+        "name": {
+          "defaultValue": "UpdateServicenowIncidence",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Update Servicenow Incident",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "RevalidationAgent",
+      "id": "processRevalidationAgent",
+      "value": {
+        "name": {
+          "defaultValue": "RevalidationAgent",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Revalidation Agent",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "SendEmailSOC2Report",
+      "id": "processSendEmailSOC2Report",
+      "value": {
+        "name": {
+          "defaultValue": "SendEmailSOC2Report",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Send Email- SOC 2 Report",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "CollectDataLeagacyApp",
+      "id": "processCollectDataLeagacyApp",
+      "value": {
+        "name": {
+          "defaultValue": "CollectDataLeagacyApp",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Collect Data fromLegacy App",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "IXPdataExtractionWorkflow",
+      "id": "processIXPdataExtractionWorkflow",
+      "value": {
+        "name": {
+          "defaultValue": "IXPdataExtractionWorkflow",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Collect Data from Documents",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "APIdataExtractionWorkflow",
+      "id": "processAPIdataExtractionWorkflow",
+      "value": {
+        "name": {
+          "defaultValue": "APIdataExtractionWorkflow",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Collect Data from Cloud APIs",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "app",
+      "key": "CSOReviewApp",
+      "id": "appCSOReviewApp",
+      "value": {
+        "name": {
+          "defaultValue": "CSOReviewApp",
+          "isExpression": false,
+          "displayName": "App name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Chief Security Officer Reviews in Action Center",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "LangchainAgentWorkflow",
+      "id": "processLangchainAgentWorkflow",
+      "value": {
+        "name": {
+          "defaultValue": "LangchainAgentWorkflow",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Langchain Agent Analyzes SOC 2 Compliance",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "AutoRemediationWF",
+      "id": "processAutoRemediationWF",
+      "value": {
+        "name": {
+          "defaultValue": "AutoRemediationWF",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "RPA Auto-Remediation - Fix SOC 2 Gaps",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    }
+  ]
+}

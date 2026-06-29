@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Process",
+  "Name": "AnalyserWorkflowUsingLangchain",
+  "Description": null,
+  "MainFile": "Main.xaml"
+}

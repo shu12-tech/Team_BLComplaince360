@@ -1,0 +1,108 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "/content/agent.json",
+      "type": "agent",
+      "uniqueId": "021aef35-2c17-44d8-be05-db75d604214b",
+      "input": {
+        "type": "object",
+        "required": [
+          "RunId",
+          "ControlId",
+          "RiskLevel",
+          "ConfidenceScore",
+          "Finding"
+        ],
+        "properties": {
+          "RunId": {
+            "type": "string",
+            "description": "Unique identifier for the compliance run. Example: SOC2-2026-001. Pass through to output exactly as received. Do not modify."
+          },
+          "ControlId": {
+            "type": "string",
+            "description": "SOC 2 Trust Services Criteria control identifier. Example: CC6.1. Pass through to output exactly as received."
+          },
+          "RiskLevel": {
+            "type": "string",
+            "description": "Risk level of the compliance finding. Allowed values: LOW, HIGH, PASS. Pass through to output exactly as received.",
+            "enum": [
+              "LOW",
+              "HIGH",
+              "PASS"
+            ]
+          },
+          "ConfidenceScore": {
+            "type": "number",
+            "description": "Confidence score of the compliance assessment. Number between 0 and 100. Use as-is — do not recalculate or modify. Output as string.",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "Finding": {
+            "type": "string",
+            "description": "Detailed description of the SOC 2 compliance finding. Used to determine ControlCategory, WorkflowToExecute, RootCause, BusinessImpact, and RecommendedRemediation."
+          }
+        },
+        "title": "Inputs"
+      },
+      "output": {
+        "type": "object",
+        "required": [
+          "RunId",
+          "ControlId",
+          "RiskLevel",
+          "ConfidenceScore",
+          "ControlCategory",
+          "RootCause",
+          "BusinessImpact",
+          "RecommendedRemediation",
+          "WorkflowToExecute",
+          "AuditNotes"
+        ],
+        "properties": {
+          "RunId": {
+            "type": "string",
+            "description": "Pass-through of the input RunId value. Do not modify."
+          },
+          "ControlId": {
+            "type": "string",
+            "description": "Pass-through of the input ControlId value. Do not modify."
+          },
+          "RiskLevel": {
+            "type": "string",
+            "description": "Pass-through of the input RiskLevel value. Allowed values: LOW, HIGH, PASS."
+          },
+          "ConfidenceScore": {
+            "type": "string",
+            "description": "Pass-through of the input ConfidenceScore as a string. Do not recalculate or modify. Example: '92' not 92."
+          },
+          "ControlCategory": {
+            "type": "string",
+            "description": "Determined from the Finding using Workflow Selection Rules. One of: Access Control, Multi-Factor Authentication, User Access Review, Security Monitoring, Backup and Recovery, Change Management, Documentation and Evidence, Incident Response, Vendor Management, Data Protection."
+          },
+          "RootCause": {
+            "type": "string",
+            "description": "Root cause of the finding based on the ControlCategory. Follow Root Cause Guidelines strictly."
+          },
+          "BusinessImpact": {
+            "type": "string",
+            "description": "Business impact of the finding based on the ControlCategory. Follow Business Impact Guidelines strictly."
+          },
+          "RecommendedRemediation": {
+            "type": "string",
+            "description": "Concise, actionable remediation recommendation based on the finding and ControlCategory. Follow Remediation Guidelines strictly."
+          },
+          "WorkflowToExecute": {
+            "type": "string",
+            "description": "Remediation workflow determined by Workflow Selection Rules. One of: DisableInactiveUsers, EnableMFA, VerifyBackupPolicy, CollectMissingEvidence, NotifySecurityTeam."
+          },
+          "AuditNotes": {
+            "type": "string",
+            "description": "Audit-ready notes summarizing the remediation decision, actions to take, and evidence retention requirements for SOC 2 compliance."
+          }
+        }
+      }
+    }
+  ]
+}

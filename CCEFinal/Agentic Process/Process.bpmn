@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:uipath="http://uipath.org/schema/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="x-uipath-initial-diagram" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" exporter="UiPath Studio Web (https://uipath.com)" exporterVersion="b52d90e7">
+  <bpmn:error id="Error_GlobalCatchAll" name="GlobalCatchAll" errorCode="GLOBAL_ERROR" />
+  <bpmn:process id="Process_1" name="Process" isExecutable="false">
+    <bpmn:extensionElements>
+      <uipath:variables version="v1">
+        <uipath:inputOutput id="error4" name="Error" type="jsonSchema" elementId="task_auto_remediate"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="runId" name="RunId" type="string" elementId="task_auto_remediate" />
+        <uipath:inputOutput id="controlId" name="ControlId" type="string" elementId="task_auto_remediate" />
+        <uipath:inputOutput id="riskLevel" name="RiskLevel" type="string" elementId="task_auto_remediate" />
+        <uipath:inputOutput id="confidenceScore" name="ConfidenceScore" type="string" elementId="task_auto_remediate" />
+        <uipath:inputOutput id="controlCategory" name="ControlCategory" type="string" elementId="task_auto_remediate" />
+        <uipath:inputOutput id="rootCause" name="RootCause" type="string" elementId="task_auto_remediate" />
+        <uipath:inputOutput id="businessImpact" name="BusinessImpact" type="string" elementId="task_auto_remediate" />
+        <uipath:inputOutput id="recommendedRemediation" name="RecommendedRemediation" type="string" elementId="task_auto_remediate" />
+        <uipath:inputOutput id="workflowToExecute" name="WorkflowToExecute" type="string" elementId="task_auto_remediate" />
+        <uipath:inputOutput id="auditNotes" name="AuditNotes" type="string" elementId="task_auto_remediate" />
+        <uipath:inputOutput id="error9" name="Error" type="jsonSchema" elementId="Activity_dWWvTW"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="runId2" name="RunId" type="string" elementId="Activity_dWWvTW" />
+        <uipath:inputOutput id="controlId2" name="ControlId" type="string" elementId="Activity_dWWvTW" />
+        <uipath:inputOutput id="validationStatus" name="ValidationStatus" type="string" elementId="Activity_dWWvTW" />
+        <uipath:inputOutput id="residualRisk" name="ResidualRisk" type="string" elementId="Activity_dWWvTW" />
+        <uipath:inputOutput id="closureRecommendation" name="ClosureRecommendation" type="string" elementId="Activity_dWWvTW" />
+        <uipath:inputOutput id="validationNotes" name="ValidationNotes" type="string" elementId="Activity_dWWvTW" />
+        <uipath:inputOutput id="error13" name="Error" type="jsonSchema" elementId="task_collect_fabric"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="outDtApp" name="Out_dtApp" type="jsonSchema" subType="object" elementId="task_collect_fabric"><![CDATA[{"type":"array","items":{"type":"object"},"$schema":"http://json-schema.org/draft-07/schema#"}]]></uipath:inputOutput>
+        <uipath:inputOutput id="outDtLocalDataBase" name="Out_dtLocalDataBase" type="jsonSchema" subType="object" elementId="task_collect_fabric"><![CDATA[{"type":"array","items":{"type":"object"},"$schema":"http://json-schema.org/draft-07/schema#"}]]></uipath:inputOutput>
+        <uipath:inputOutput id="outJson" name="Out_JSON" type="string" elementId="task_collect_fabric" />
+        <uipath:inputOutput id="error15" name="Error" type="jsonSchema" elementId="task_collect_docs"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="outJson2" name="Out_JSON" type="string" elementId="task_collect_docs" />
+        <uipath:inputOutput id="error" name="Error" type="jsonSchema" elementId="task_review_findings"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="officerComment" name="OfficerComment" type="string" elementId="task_review_findings" />
+        <uipath:inputOutput id="officerDecision" name="OfficerDecision" type="string" elementId="task_review_findings" />
+        <uipath:inputOutput id="action" name="Action" type="string" elementId="task_review_findings" />
+        <uipath:inputOutput id="hitlTask" name="hitlTask" type="jsonSchema" elementId="task_review_findings"><![CDATA[{"type":"object","displayName":"All Task Properties","properties":{"Id":{"type":"integer","description":"Task identifier"},"Key":{"type":"string","description":"Unique task identifier (UUID)"},"Title":{"type":"string","description":"Task title"},"Status":{"type":"string","description":"Task status: Unassigned, Pending, or Completed"},"Action":{"type":"string","description":"Action taken on the task"},"ActionLabel":{"type":"string","description":"Action display label"},"Priority":{"type":"string","description":"Task priority: Low, Medium, High, or Critical"},"Type":{"type":"string","description":"Task type (e.g. FormTask, AppTask, QuickFormTask)"},"Data":{"type":"object","description":"Task form field values"},"CompletedByUser":{"type":"object","description":"User who completed the task","properties":{"Id":{"type":"integer"},"Name":{"type":"string"},"Surname":{"type":"string"},"UserName":{"type":"string"},"EmailAddress":{"type":"string"},"DisplayName":{"type":"string"},"Type":{"type":"string","description":"User, Robot, DirectoryUser, DirectoryGroup, DirectoryRobot, or DirectoryExternalApplication"},"AuthenticationSource":{"type":"string"}}},"AssignedToUser":{"type":"object","description":"User currently assigned to the task","properties":{"Id":{"type":"integer"},"Name":{"type":"string"},"Surname":{"type":"string"},"UserName":{"type":"string"},"EmailAddress":{"type":"string"},"DisplayName":{"type":"string"},"Type":{"type":"string","description":"User, Robot, DirectoryUser, DirectoryGroup, DirectoryRobot, or DirectoryExternalApplication"},"AuthenticationSource":{"type":"string"}}},"AssignedToUserId":{"type":"integer","description":"ID of the assigned user"},"TaskAssignmentCriteria":{"type":"string","description":"Assignment criteria: SingleUser, Workload, AllUsers, RoundRobin, or Hierarchy"},"TaskAssignees":{"type":"array","description":"List of users assigned to the task","items":{"type":"object","properties":{"Id":{"type":"integer"},"Name":{"type":"string"},"Surname":{"type":"string"},"UserName":{"type":"string"},"EmailAddress":{"type":"string"},"DisplayName":{"type":"string"},"Type":{"type":"string","description":"User, Robot, DirectoryUser, DirectoryGroup, DirectoryRobot, or DirectoryExternalApplication"},"AuthenticationSource":{"type":"string"}}}},"CompletionTime":{"type":"string","description":"Task completion timestamp"},"CreationTime":{"type":"string","description":"Task creation timestamp"},"LastModificationTime":{"type":"string","description":"Last modification timestamp"},"LastAssignedTime":{"type":"string","description":"Last assignment timestamp"},"OrganizationUnitId":{"type":"integer","description":"Folder/organization unit ID"},"OrganizationUnitFullyQualifiedName":{"type":"string","description":"Fully qualified folder name"},"ParentOperationId":{"type":"string","description":"Operation ID that created this task"},"CreatorJobKey":{"type":"string","description":"Key of the job that created this task (UUID)"},"ExternalTag":{"type":"string","description":"External system identifier"},"ProcessingTime":{"type":"integer","description":"Time spent in assigned state"},"WaitJobState":{"type":"string","description":"State of the waiting job"},"WaitJobKey":{"type":"string","description":"Key of the waiting job (UUID)"},"TaskSchemaKey":{"type":"string","description":"Schema key for QuickFormTask (UUID)"},"IsDeleted":{"type":"boolean"},"IsCurrentUserInAllUserAssignedGroup":{"type":"boolean"},"CreatorUserId":{"type":"integer","description":"ID of the user who created the task"},"LastModifierUserId":{"type":"integer","description":"ID of the last user to modify the task"},"DeleterUserId":{"type":"integer"},"DeletionTime":{"type":"string"},"Tags":{"type":"array","description":"Tags associated to the task","items":{"type":"object","properties":{"Name":{"type":"string"},"DisplayName":{"type":"string"},"Value":{"type":"string"},"DisplayValue":{"type":"string"}}}},"TaskDefinitionPropertiesId":{"type":"integer","description":"Task definition properties ID"},"AppTasksMetadata":{"type":"object","description":"App task metadata","properties":{"Id":{"type":"integer"},"AppId":{"type":"string","description":"Associated App ID"},"AppVersion":{"type":"integer","description":"Associated App version"},"AppProcessKey":{"type":"string","description":"App process key (UUID)"},"FolderKey":{"type":"string","description":"Folder key (UUID)"},"Runtime":{"type":"string","description":"Serverless or Unattended"},"AppType":{"type":"string","description":"Custom or Dynamic"},"CreationTime":{"type":"string"},"CreatorUserId":{"type":"integer"},"CreatorUserKey":{"type":"string","description":"Creator user key (UUID)"}}},"TaskSlaDetails":{"type":"array","description":"Task SLA details","items":{"type":"object","properties":{"ExpiryTime":{"type":"string","description":"SLA expiry timestamp"},"StartCriteria":{"type":"string","description":"TaskCreated, TaskAssigned, or TaskCompleted"},"EndCriteria":{"type":"string","description":"TaskCreated, TaskAssigned, or TaskCompleted"},"Status":{"type":"string","description":"OverdueLater, OverdueSoon, Overdue, or CompletedInTime"}}}},"TaskSource":{"type":"object","description":"Task source information","properties":{"SourceName":{"type":"string","description":"Agent, Workflow, Maestro, CaseManagement, or Default"},"SourceId":{"type":"string"},"JobId":{"type":"string"}}}},"$schema":"http://json-schema.org/draft-07/schema#"}]]></uipath:inputOutput>
+        <uipath:inputOutput id="error7" name="Error" type="jsonSchema" elementId="Activity_zaw14e"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="ioControlId" name="IO_ControlID" type="string" elementId="Activity_zaw14e" />
+        <uipath:inputOutput id="ioRunId" name="IO_RunID" type="string" elementId="Activity_zaw14e" />
+        <uipath:inputOutput id="ioRiskLevel" name="IO_RiskLevel" type="string" elementId="Activity_zaw14e" />
+        <uipath:inputOutput id="outConfidenceScore" name="Out_ConfidenceScore" type="string" elementId="Activity_zaw14e" />
+        <uipath:inputOutput id="error6" name="Error" type="jsonSchema" elementId="Activity_TPf1Xc"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="finding" name="Finding" type="string" elementId="Activity_TPf1Xc" />
+        <uipath:inputOutput id="controlId3" name="ControlId" type="string" elementId="Activity_TPf1Xc" />
+        <uipath:inputOutput id="confidenceScore2" name="ConfidenceScore" type="string" elementId="Activity_TPf1Xc" />
+        <uipath:inputOutput id="riskLevel2" name="RiskLevel" type="string" elementId="Activity_TPf1Xc" />
+        <uipath:inputOutput id="runId3" name="RunId" type="string" elementId="Activity_TPf1Xc" />
+        <uipath:inputOutput id="error2" name="Error" type="jsonSchema" elementId="Activity_jiuwfk"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="outIncidentId" name="Out_IncidentID" type="string" elementId="Activity_jiuwfk" />
+        <uipath:inputOutput id="error3" name="Error" type="jsonSchema" elementId="Activity_tmSOUP"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="action2" name="Action" type="string" elementId="Activity_tmSOUP" />
+        <uipath:inputOutput id="hitlTask2" name="hitlTask" type="jsonSchema" elementId="Activity_tmSOUP"><![CDATA[{"type":"object","displayName":"All Task Properties","properties":{"Id":{"type":"integer","description":"Task identifier"},"Key":{"type":"string","description":"Unique task identifier (UUID)"},"Title":{"type":"string","description":"Task title"},"Status":{"type":"string","description":"Task status: Unassigned, Pending, or Completed"},"Action":{"type":"string","description":"Action taken on the task"},"ActionLabel":{"type":"string","description":"Action display label"},"Priority":{"type":"string","description":"Task priority: Low, Medium, High, or Critical"},"Type":{"type":"string","description":"Task type (e.g. FormTask, AppTask, QuickFormTask)"},"Data":{"type":"object","description":"Task form field values"},"CompletedByUser":{"type":"object","description":"User who completed the task","properties":{"Id":{"type":"integer"},"Name":{"type":"string"},"Surname":{"type":"string"},"UserName":{"type":"string"},"EmailAddress":{"type":"string"},"DisplayName":{"type":"string"},"Type":{"type":"string","description":"User, Robot, DirectoryUser, DirectoryGroup, DirectoryRobot, or DirectoryExternalApplication"},"AuthenticationSource":{"type":"string"}}},"AssignedToUser":{"type":"object","description":"User currently assigned to the task","properties":{"Id":{"type":"integer"},"Name":{"type":"string"},"Surname":{"type":"string"},"UserName":{"type":"string"},"EmailAddress":{"type":"string"},"DisplayName":{"type":"string"},"Type":{"type":"string","description":"User, Robot, DirectoryUser, DirectoryGroup, DirectoryRobot, or DirectoryExternalApplication"},"AuthenticationSource":{"type":"string"}}},"AssignedToUserId":{"type":"integer","description":"ID of the assigned user"},"TaskAssignmentCriteria":{"type":"string","description":"Assignment criteria: SingleUser, Workload, AllUsers, RoundRobin, or Hierarchy"},"TaskAssignees":{"type":"array","description":"List of users assigned to the task","items":{"type":"object","properties":{"Id":{"type":"integer"},"Name":{"type":"string"},"Surname":{"type":"string"},"UserName":{"type":"string"},"EmailAddress":{"type":"string"},"DisplayName":{"type":"string"},"Type":{"type":"string","description":"User, Robot, DirectoryUser, DirectoryGroup, DirectoryRobot, or DirectoryExternalApplication"},"AuthenticationSource":{"type":"string"}}}},"CompletionTime":{"type":"string","description":"Task completion timestamp"},"CreationTime":{"type":"string","description":"Task creation timestamp"},"LastModificationTime":{"type":"string","description":"Last modification timestamp"},"LastAssignedTime":{"type":"string","description":"Last assignment timestamp"},"OrganizationUnitId":{"type":"integer","description":"Folder/organization unit ID"},"OrganizationUnitFullyQualifiedName":{"type":"string","description":"Fully qualified folder name"},"ParentOperationId":{"type":"string","description":"Operation ID that created this task"},"CreatorJobKey":{"type":"string","description":"Key of the job that created this task (UUID)"},"ExternalTag":{"type":"string","description":"External system identifier"},"ProcessingTime":{"type":"integer","description":"Time spent in assigned state"},"WaitJobState":{"type":"string","description":"State of the waiting job"},"WaitJobKey":{"type":"string","description":"Key of the waiting job (UUID)"},"TaskSchemaKey":{"type":"string","description":"Schema key for QuickFormTask (UUID)"},"IsDeleted":{"type":"boolean"},"IsCurrentUserInAllUserAssignedGroup":{"type":"boolean"},"CreatorUserId":{"type":"integer","description":"ID of the user who created the task"},"LastModifierUserId":{"type":"integer","description":"ID of the last user to modify the task"},"DeleterUserId":{"type":"integer"},"DeletionTime":{"type":"string"},"Tags":{"type":"array","description":"Tags associated to the task","items":{"type":"object","properties":{"Name":{"type":"string"},"DisplayName":{"type":"string"},"Value":{"type":"string"},"DisplayValue":{"type":"string"}}}},"TaskDefinitionPropertiesId":{"type":"integer","description":"Task definition properties ID"},"AppTasksMetadata":{"type":"object","description":"App task metadata","properties":{"Id":{"type":"integer"},"AppId":{"type":"string","description":"Associated App ID"},"AppVersion":{"type":"integer","description":"Associated App version"},"AppProcessKey":{"type":"string","description":"App process key (UUID)"},"FolderKey":{"type":"string","description":"Folder key (UUID)"},"Runtime":{"type":"string","description":"Serverless or Unattended"},"AppType":{"type":"string","description":"Custom or Dynamic"},"CreationTime":{"type":"string"},"CreatorUserId":{"type":"integer"},"CreatorUserKey":{"type":"string","description":"Creator user key (UUID)"}}},"TaskSlaDetails":{"type":"array","description":"Task SLA details","items":{"type":"object","properties":{"ExpiryTime":{"type":"string","description":"SLA expiry timestamp"},"StartCriteria":{"type":"string","description":"TaskCreated, TaskAssigned, or TaskCompleted"},"EndCriteria":{"type":"string","description":"TaskCreated, TaskAssigned, or TaskCompleted"},"Status":{"type":"string","description":"OverdueLater, OverdueSoon, Overdue, or CompletedInTime"}}}},"TaskSource":{"type":"object","description":"Task source information","properties":{"SourceName":{"type":"string","description":"Agent, Workflow, Maestro, CaseManagement, or Default"},"SourceId":{"type":"string"},"JobId":{"type":"string"}}}},"$schema":"http://json-schema.org/draft-07/schema#"}]]></uipath:inputOutput>
+        <uipath:inputOutput id="csoComments" name="CSOComments" type="string" elementId="Activity_tmSOUP" />
+        <uipath:inputOutput id="error5" name="Error" type="jsonSchema" elementId="Activity_5mgi1p"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="outEvidencePackagePath" name="Out_EvidencePackagePath" type="file" elementId="Activity_5mgi1p"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"ID":{"type":"string","description":"Orchestrator attachment key"},"FullName":{"type":"string","description":"File name"},"MimeType":{"type":"string","description":"The MIME type of the content, such as application/json or image/png"},"Metadata":{"type":"object","description":"Dictionary<string, string> of metadata","additionalProperties":{"type":"string"}}},"required":["ID"],"x-uipath-resource-kind":"JobAttachment"}]]></uipath:inputOutput>
+        <uipath:inputOutput id="error11" name="Error" type="jsonSchema" elementId="Activity_gscmVN"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="emailSent" name="EmailSent" type="boolean" elementId="Activity_gscmVN" />
+        <uipath:inputOutput id="error14" name="Error" type="jsonSchema" elementId="task_collect_cloud"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="outJson3" name="Out_JSON" type="string" elementId="task_collect_cloud" />
+        <uipath:inputOutput id="error8" name="Error" type="jsonSchema" elementId="Activity_URqRuk"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        <uipath:inputOutput id="remediationStatus" name="RemediationStatus" type="string" elementId="Activity_URqRuk" />
+        <uipath:inputOutput id="remediationDetails" name="RemediationDetails" type="string" elementId="Activity_URqRuk" />
+      </uipath:variables>
+      <uipath:bindings version="v1">
+        <uipath:binding id="bQfhIjxrV" name="folderPath" type="string" resource="app" resourceKey="SOC2ReviewCSOReviewApp" propertyAttribute="folderPath" />
+        <uipath:binding id="bD3L0K8d5" name="name" type="string" default="SOC2ReviewApp" resource="app" resourceKey="SOC2ReviewCSOReviewApp" propertyAttribute="name" />
+        <uipath:binding id="bMeJ3UXdk" name="folderPath" type="string" resource="app" resourceKey="SOC2ReviewApp_1" propertyAttribute="folderPath" />
+        <uipath:binding id="bJShsm9su" name="name" type="string" default="SOC2ReviewApp_1" resource="app" resourceKey="SOC2ReviewApp_1" propertyAttribute="name" />
+        <uipath:binding id="bSHugNXff" name="folderPath" type="string" resource="app" resourceKey="SOC2ReviewApp_1" propertyAttribute="folderPath" />
+        <uipath:binding id="bfrL4w69t" name="folderPath" type="string" resource="app" resourceKey="SOC2 Officer Review" propertyAttribute="folderPath" />
+        <uipath:binding id="b7hdNZWA2" name="name" type="string" default="SOC2 Officer Review" resource="app" resourceKey="SOC2 Officer Review" propertyAttribute="name" />
+        <uipath:binding id="bXDTe6LK0" name="folderPath" type="string" resource="process" resourceKey="CreateServicenowIncidence" propertyAttribute="folderPath" />
+        <uipath:binding id="bs4cJpXwg" name="name" type="string" default="CreateServicenowIncidence" resource="process" resourceKey="CreateServicenowIncidence" propertyAttribute="name" />
+        <uipath:binding id="buhJoG2OW" name="folderPath" type="string" resource="process" resourceSubType="Agent" resourceKey="AutoRemediationAgent" propertyAttribute="folderPath" />
+        <uipath:binding id="bXG2P9lzt" name="name" type="string" default="AutoRemediationAgent" resource="process" resourceSubType="Agent" resourceKey="AutoRemediationAgent" propertyAttribute="name" />
+        <uipath:binding id="be3KVnt0V" name="folderPath" type="string" resource="process" resourceKey="GenerateEvidencePackage" propertyAttribute="folderPath" />
+        <uipath:binding id="bb2BMCNZc" name="name" type="string" default="GenerateEvidencePackage" resource="process" resourceKey="GenerateEvidencePackage" propertyAttribute="name" />
+        <uipath:binding id="bltTU741q" name="folderPath" type="string" resource="process" resourceSubType="Agent" resourceKey="AutoRemediationAgent" propertyAttribute="folderPath" />
+        <uipath:binding id="bbCKQVMUU" name="folderPath" type="string" resource="process" resourceKey="UpdateServicenowIncidence" propertyAttribute="folderPath" />
+        <uipath:binding id="bcRD9RqXP" name="name" type="string" default="UpdateServicenowIncidence" resource="process" resourceKey="UpdateServicenowIncidence" propertyAttribute="name" />
+        <uipath:binding id="bKfjHd6dW" name="folderPath" type="string" resource="process" resourceKey="AutoRemediationWorkflow" propertyAttribute="folderPath" />
+        <uipath:binding id="bJFebivsk" name="name" type="string" default="AutoRemediationWorkflow" resource="process" resourceKey="AutoRemediationWorkflow" propertyAttribute="name" />
+        <uipath:binding id="bqxPbIUBB" name="folderPath" type="string" resource="process" resourceSubType="Agent" resourceKey="AutoRemediationAgent" propertyAttribute="folderPath" />
+        <uipath:binding id="bBY2PhLvP" name="folderPath" type="string" resource="process" resourceSubType="Agent" resourceKey="RevalidationAgent" propertyAttribute="folderPath" />
+        <uipath:binding id="bkTRbH4er" name="name" type="string" default="RevalidationAgent" resource="process" resourceSubType="Agent" resourceKey="RevalidationAgent" propertyAttribute="name" />
+        <uipath:binding id="b9a5tQraE" name="folderPath" type="string" resource="process" resourceKey="SendEmailSOC2Report" propertyAttribute="folderPath" />
+        <uipath:binding id="bi5CA3YsN" name="name" type="string" default="SendEmailSOC2Report" resource="process" resourceKey="SendEmailSOC2Report" propertyAttribute="name" />
+        <uipath:binding id="bC63CZUbB" name="folderPath" type="string" resource="process" resourceKey="RPA Workflow" propertyAttribute="folderPath" />
+        <uipath:binding id="bhnIykQCW" name="name" type="string" default="RPA Workflow" resource="process" resourceKey="RPA Workflow" propertyAttribute="name" />
+        <uipath:binding id="bLeHNS4Il" name="folderPath" type="string" resource="process" resourceKey="CollectDataLeagacyApp" propertyAttribute="folderPath" />
+        <uipath:binding id="bEo4FUaFk" name="name" type="string" default="CollectDataLeagacyApp" resource="process" resourceKey="CollectDataLeagacyApp" propertyAttribute="name" />
+        <uipath:binding id="bMv0doy73" name="folderPath" type="string" resource="process" resourceKey="IXPdataExtractionWorkflow" propertyAttribute="folderPath" />
+        <uipath:binding id="bTVDqSdbf" name="name" type="string" default="IXPdataExtractionWorkflow" resource="process" resourceKey="IXPdataExtractionWorkflow" propertyAttribute="name" />
+        <uipath:binding id="bGpubRqWv" name="folderPath" type="string" resource="process" resourceKey="APIdataExtractionWorkflow" propertyAttribute="folderPath" />
+        <uipath:binding id="bAX79Y5qD" name="name" type="string" default="APIdataExtractionWorkflow" resource="process" resourceKey="APIdataExtractionWorkflow" propertyAttribute="name" />
+        <uipath:binding id="budLUqPkv" name="folderPath" type="string" resource="process" resourceKey="IXPdataExtractionWorkflow" propertyAttribute="folderPath" />
+        <uipath:binding id="bJaHbkcsa" name="folderPath" type="string" resource="process" resourceKey="AnalyserWorkflowUsingLangchain" propertyAttribute="folderPath" />
+        <uipath:binding id="bVFM6ERDk" name="name" type="string" default="AnalyserWorkflowUsingLangchain" resource="process" resourceKey="AnalyserWorkflowUsingLangchain" propertyAttribute="name" />
+        <uipath:binding id="blzGhMA7N" name="folderPath" type="string" resource="app" resourceKey="CSOReviewApp" propertyAttribute="folderPath" />
+        <uipath:binding id="bDiYXsRNB" name="name" type="string" default="CSOReviewApp" resource="app" resourceKey="CSOReviewApp" propertyAttribute="name" />
+        <uipath:binding id="bHjLgxp6I" name="folderPath" type="string" resource="process" resourceKey="LangchainAgentWorkflow" propertyAttribute="folderPath" />
+        <uipath:binding id="bi6NUZbws" name="name" type="string" default="LangchainAgentWorkflow" resource="process" resourceKey="LangchainAgentWorkflow" propertyAttribute="name" />
+        <uipath:binding id="bY243btzN" name="folderPath" type="string" resource="process" resourceKey="AutoRemediationWF" propertyAttribute="folderPath" />
+        <uipath:binding id="bLUeZ7r2J" name="name" type="string" default="AutoRemediationWF" resource="process" resourceKey="AutoRemediationWF" propertyAttribute="name" />
+      </uipath:bindings>
+      <uipath:migrationVersion version="15" />
+      <uipath:intsvcActivityConfig version="v2" />
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="start_event_timer" name="Compliance Cycle Triggered">
+      <bpmn:extensionElements>
+        <uipath:entryPointId value="60734dfd-5160-400c-bcf1-6249c1a78dc1" />
+      </bpmn:extensionElements>
+      <bpmn:outgoing>edge_vew6o1</bpmn:outgoing>
+      <bpmn:timerEventDefinition />
+    </bpmn:startEvent>
+    <bpmn:parallelGateway id="gateway_split_data" name="Start Parallel Evidence Collection">
+      <bpmn:outgoing>flow_split_fabric</bpmn:outgoing>
+      <bpmn:outgoing>edge_ibzDp8</bpmn:outgoing>
+      <bpmn:outgoing>edge_lTVgGG</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:serviceTask id="task_collect_cloud" name="Collect Data from Cloud APIs">
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bAX79Y5qD" />
+            <uipath:input name="folderPath" type="string" value="=bindings.bGpubRqWv" />
+            <uipath:input name="_label" type="string" value="APIdataExtractionWorkflow" />
+          </uipath:context>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error14" />
+          <uipath:output name="Out_JSON" type="string" source="=Out_JSON" var="outJson3" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_ibzDp8</bpmn:incoming>
+      <bpmn:outgoing>edge_JbS9bX</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="task_collect_fabric" name="Collect Data fromLegacy App">
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bEo4FUaFk" />
+            <uipath:input name="folderPath" type="string" value="=bindings.bLeHNS4Il" />
+            <uipath:input name="_label" type="string" value="CollectDataLeagacyApp" />
+          </uipath:context>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error13" />
+          <uipath:output name="Out_dtApp" type="jsonSchema" subType="object" source="=Out_dtApp" var="outDtApp" />
+          <uipath:output name="Out_dtLocalDataBase" type="jsonSchema" subType="object" source="=Out_dtLocalDataBase" var="outDtLocalDataBase" />
+          <uipath:output name="Out_JSON" type="string" source="=Out_JSON" var="outJson" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>flow_split_fabric</bpmn:incoming>
+      <bpmn:outgoing>edge_task_collect_fabric-Gateway_wRdednFpqGrn</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="task_collect_docs" name="Collect Data from Documents">
+      <bpmn:documentation>Documents stored on storage bucket</bpmn:documentation>
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bTVDqSdbf" />
+            <uipath:input name="folderPath" type="string" value="=bindings.bMv0doy73" />
+            <uipath:input name="_label" type="string" value="IXPdataExtractionWorkflow" />
+          </uipath:context>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error15" />
+          <uipath:output name="Out_JSON" type="string" source="=Out_JSON" var="outJson2" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_lTVgGG</bpmn:incoming>
+      <bpmn:incoming>edge_vew6o1</bpmn:incoming>
+      <bpmn:outgoing>edge_dVLvnK</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="gateway_risk_classification" name="SOC 2 Risk Classification">
+      <bpmn:incoming>edge_task_auto_remediate-gateway_risk_classificationfuTIs6</bpmn:incoming>
+      <bpmn:outgoing>edge_a6I7xF</bpmn:outgoing>
+      <bpmn:outgoing>edge_gateway_risk_classification-Gateway_qLhO7QEWmJLM</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="task_auto_remediate" name="Decide Remediation to Fix SOC 2 Gaps">
+      <bpmn:documentation>Agent decides Immediate SOC 2 Remediation</bpmn:documentation>
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartAgentJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bXG2P9lzt" />
+            <uipath:input name="folderPath" type="string" value="=bindings.bltTU741q" />
+            <uipath:input name="_label" type="string" value="AutoRemediationAgent" />
+            <uipath:inputSchema type="jsonSchema"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"RunId":{"type":"string"},"ControlId":{"type":"string"},"RiskLevel":{"type":"string"},"ConfidenceScore":{"type":"number"},"Finding":{"type":"string"}},"required":["RunId","ControlId","RiskLevel","ConfidenceScore","Finding"]}]]></uipath:inputSchema>
+          </uipath:context>
+          <uipath:input name="JobArguments" type="json" target="bodyField"><![CDATA[{"RunId":"=vars.runId3","ControlId":"=vars.controlId3","RiskLevel":"=vars.riskLevel2","ConfidenceScore":"=js:parseInt(vars.confidenceScore2)","Finding":"=vars.finding"}]]></uipath:input>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error4" />
+          <uipath:output name="RunId" type="string" source="=RunId" var="runId" />
+          <uipath:output name="ControlId" type="string" source="=ControlId" var="controlId" />
+          <uipath:output name="RiskLevel" type="string" source="=RiskLevel" var="riskLevel" />
+          <uipath:output name="ConfidenceScore" type="string" source="=ConfidenceScore" var="confidenceScore" />
+          <uipath:output name="ControlCategory" type="string" source="=ControlCategory" var="controlCategory" />
+          <uipath:output name="RootCause" type="string" source="=RootCause" var="rootCause" />
+          <uipath:output name="BusinessImpact" type="string" source="=BusinessImpact" var="businessImpact" />
+          <uipath:output name="RecommendedRemediation" type="string" source="=RecommendedRemediation" var="recommendedRemediation" />
+          <uipath:output name="WorkflowToExecute" type="string" source="=WorkflowToExecute" var="workflowToExecute" />
+          <uipath:output name="AuditNotes" type="string" source="=AuditNotes" var="auditNotes" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_Gateway_3IrCWU-task_auto_remediateck1udb</bpmn:incoming>
+      <bpmn:incoming>edge_yiYBWE</bpmn:incoming>
+      <bpmn:incoming>edge_h0fD9x</bpmn:incoming>
+      <bpmn:outgoing>edge_task_auto_remediate-gateway_risk_classificationfuTIs6</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="task_review_findings" name="Officer Reviews SOC 2 Findings in Action Center">
+      <bpmn:documentation>Compliance Officer reviews high-risk findings via UiPath Apps.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Actions.HITL" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.b7hdNZWA2" />
+            <uipath:input name="folderPath" type="string" value="=bindings.bfrL4w69t" />
+            <uipath:input name="_label" type="string" value="SOC2 Officer Review" />
+            <uipath:input name="taskTitle" type="string" value="=js:&#34;SOC2 review for RunID :&#34;+vars.runId" required="true" />
+            <uipath:input name="assignmentCriteria" type="string" value="SingleUser" />
+            <uipath:input name="recipient" type="json" />
+            <uipath:input name="customAssignees" type="string" />
+            <uipath:input name="priority" type="string" value="Medium" />
+            <uipath:input name="labels" type="string" />
+            <uipath:input name="actionCatalogName" type="string" />
+            <uipath:input name="enableActionableNotifications" type="boolean" value="true" />
+            <uipath:inputSchema type="jsonSchema"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"Findings":{"type":"string"},"RunID":{"type":"string"}},"required":["Findings","RunID"]}]]></uipath:inputSchema>
+          </uipath:context>
+          <uipath:input name="HitlTaskArguments" type="json" target="bodyField"><![CDATA[{"Findings":"=vars.finding","RunID":"=vars.runId"}]]></uipath:input>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error" />
+          <uipath:output name="OfficerComment" type="string" source="=OfficerComment" var="officerComment" />
+          <uipath:output name="OfficerDecision" type="string" source="=OfficerDecision" var="officerDecision" />
+          <uipath:output name="Action" type="string" source="=Action" var="action" options="[{&#34;value&#34;:&#34;Approve&#34;,&#34;label&#34;:&#34;Approve&#34;},{&#34;value&#34;:&#34;Escalate&#34;,&#34;label&#34;:&#34;Escalate&#34;}]" />
+          <uipath:output name="hitlTask" type="jsonSchema" source="=hitlTask" var="hitlTask" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_a6I7xF</bpmn:incoming>
+      <bpmn:incoming>edge_Khz1Ly</bpmn:incoming>
+      <bpmn:outgoing>edge_G3ypEn</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:boundaryEvent id="Boundary_Timer_Review" attachedToRef="task_review_findings">
+      <bpmn:outgoing>edge_qU2uZv</bpmn:outgoing>
+      <bpmn:timerEventDefinition>
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT24H</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:endEvent id="end_event" name="SOC 2 Compliance Cycle Complete">
+      <bpmn:incoming>edge_Activity_gscmVN-end_eventjhO5O7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:parallelGateway id="Gateway_wRdedn" name="Evidence Consolidated">
+      <bpmn:incoming>edge_task_collect_fabric-Gateway_wRdednFpqGrn</bpmn:incoming>
+      <bpmn:incoming>edge_JbS9bX</bpmn:incoming>
+      <bpmn:outgoing>edge_Gateway_wRdedn-Activity_TPf1XcntDsID</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:exclusiveGateway id="Gateway_fCVSXe" name="Officer Decision">
+      <bpmn:incoming>edge_G3ypEn</bpmn:incoming>
+      <bpmn:outgoing>edge_5QiLzM</bpmn:outgoing>
+      <bpmn:outgoing>edge_tFciDx</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="Activity_gscmVN" name="Send Email- SOC 2 Report">
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bi5CA3YsN" />
+            <uipath:input name="folderPath" type="string" value="=bindings.b9a5tQraE" />
+            <uipath:input name="_label" type="string" value="SendEmailSOC2Report" />
+            <uipath:inputSchema type="jsonSchema"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"RecipientEmail":{"type":"string"},"RunId":{"type":"string"},"RiskLevel":{"type":"string"},"ValidationStatus":{"type":"string"},"AuditReadiness":{"type":"string"},"EvidencePackagePath":{"type":"string"}},"required":[]}]]></uipath:inputSchema>
+          </uipath:context>
+          <uipath:input name="JobArguments" type="json" target="bodyField"><![CDATA[{"RecipientEmail":"=js:\"priyanka.m@boundaryless.com\"","RunId":"=vars.runId3","RiskLevel":"=vars.riskLevel2","ValidationStatus":"=js:vars.validationStatus+\"-\"","AuditReadiness":"=vars.confidenceScore2","EvidencePackagePath":null}]]></uipath:input>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error11" />
+          <uipath:output name="EmailSent" type="boolean" source="=EmailSent" var="emailSent" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_Activity_5mgi1p-Activity_gscmVNQJXIkD</bpmn:incoming>
+      <bpmn:outgoing>edge_Activity_gscmVN-end_eventjhO5O7</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_URqRuk" name="RPA Auto-Remediation - Fix SOC 2 Gaps">
+      <bpmn:documentation>RPA Executes Immediate SOC 2 Remediation</bpmn:documentation>
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bLUeZ7r2J" />
+            <uipath:input name="folderPath" type="string" value="=bindings.bY243btzN" />
+            <uipath:input name="_label" type="string" value="AutoRemediationWF" />
+            <uipath:inputSchema type="jsonSchema"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"RunId":{"type":"string"},"RiskLevel":{"type":"string"},"Finding":{"type":"string"},"ControlId":{"type":"string"},"RemediationWorkflow":{"type":"string"}},"required":[]}]]></uipath:inputSchema>
+          </uipath:context>
+          <uipath:input name="JobArguments" type="json" target="bodyField"><![CDATA[{"RunId":"=vars.runId","RiskLevel":"=vars.riskLevel","Finding":"=vars.finding","ControlId":"=vars.controlId","RemediationWorkflow":"=vars.workflowToExecute"}]]></uipath:input>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error8" />
+          <uipath:output name="RemediationDetails" type="string" source="=RemediationDetails" var="remediationDetails" />
+          <uipath:output name="RemediationStatus" type="string" source="=RemediationStatus" var="remediationStatus" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_Activity_jiuwfk-Activity_URqRukxiENX2</bpmn:incoming>
+      <bpmn:outgoing>edge_Activity_URqRuk-Activity_dWWvTWHT5k1r</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_dWWvTW" name="Revalidation Agent">
+      <bpmn:documentation>Determine whether a remediation action successfully resolved a compliance finding.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartAgentJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bkTRbH4er" />
+            <uipath:input name="folderPath" type="string" value="=bindings.bBY2PhLvP" />
+            <uipath:input name="_label" type="string" value="RevalidationAgent" />
+            <uipath:inputSchema type="jsonSchema"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"RunId":{"type":"string"},"ControlId":{"type":"string"},"RiskLevel":{"type":"string"},"OriginalFinding":{"type":"string"},"RemediationPerformed":{"type":"string"},"CurrentControlState":{"type":"string"}},"required":["RunId","ControlId","RiskLevel","OriginalFinding","RemediationPerformed","CurrentControlState"]}]]></uipath:inputSchema>
+          </uipath:context>
+          <uipath:input name="JobArguments" type="json" target="bodyField"><![CDATA[{"RunId":"=vars.runId","ControlId":"=vars.controlId","RiskLevel":"=vars.riskLevel","OriginalFinding":"=vars.finding","RemediationPerformed":"=vars.remediationDetails","CurrentControlState":"=vars.remediationDetails"}]]></uipath:input>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error9" />
+          <uipath:output name="RunId" type="string" source="=RunId" var="runId2" />
+          <uipath:output name="ControlId" type="string" source="=ControlId" var="controlId2" />
+          <uipath:output name="ValidationStatus" type="string" source="=ValidationStatus" var="validationStatus" />
+          <uipath:output name="ResidualRisk" type="string" source="=ResidualRisk" var="residualRisk" />
+          <uipath:output name="ClosureRecommendation" type="string" source="=ClosureRecommendation" var="closureRecommendation" />
+          <uipath:output name="ValidationNotes" type="string" source="=ValidationNotes" var="validationNotes" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_Activity_URqRuk-Activity_dWWvTWHT5k1r</bpmn:incoming>
+      <bpmn:outgoing>edge_a0VrWz</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_zaw14e" name="Update Servicenow Incident">
+      <bpmn:documentation>If Result of Revalidation agent is Fail then Incident has to be updated with reason</bpmn:documentation>
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bcRD9RqXP" />
+            <uipath:input name="folderPath" type="string" value="=bindings.bbCKQVMUU" />
+            <uipath:input name="_label" type="string" value="UpdateServicenowIncidence" />
+            <uipath:inputSchema type="jsonSchema"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"IO_ControlID":{"type":"string"},"IO_Findings":{"type":"string"},"In_IncidentID":{"type":"string"},"IO_RunID":{"type":"string"},"IO_RiskLevel":{"type":"string"}},"required":[]}]]></uipath:inputSchema>
+          </uipath:context>
+          <uipath:input name="JobArguments" type="json" target="bodyField"><![CDATA[{"IO_ControlID":"=vars.controlId","IO_Findings":"=vars.validationNotes","In_IncidentID":"=vars.outIncidentId","IO_RunID":"=vars.runId","IO_RiskLevel":"=vars.riskLevel"}]]></uipath:input>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error7" />
+          <uipath:output name="IO_ControlID" type="string" source="=IO_ControlID" var="ioControlId" />
+          <uipath:output name="IO_Findings" type="string" source="=IO_Findings" var="finding" originalVar="ioFindings" />
+          <uipath:output name="IO_RunID" type="string" source="=IO_RunID" var="ioRunId" />
+          <uipath:output name="IO_RiskLevel" type="string" source="=IO_RiskLevel" var="ioRiskLevel" />
+          <uipath:output name="Out_ConfidenceScore" type="string" source="=Out_ConfidenceScore" var="outConfidenceScore" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_XmfE01</bpmn:incoming>
+      <bpmn:outgoing>edge_h0fD9x</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_3IrCWU" name="Compliance Findings">
+      <bpmn:incoming>edge_Activity_TPf1Xc-Gateway_3IrCWUa75aBG</bpmn:incoming>
+      <bpmn:outgoing>edge_Gateway_3IrCWU-task_auto_remediateck1udb</bpmn:outgoing>
+      <bpmn:outgoing>edge_Gateway_3IrCWU-Activity_5mgi1pQuHIyl</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_tmSOUP" name="Chief Security Officer Reviews in Action Center">
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Actions.HITL" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bDiYXsRNB" />
+            <uipath:input name="folderPath" type="string" value="=bindings.blzGhMA7N" />
+            <uipath:input name="_label" type="string" value="CSOReviewApp" />
+            <uipath:input name="taskTitle" type="string" value="&#34;CSO&#34;" required="true" />
+            <uipath:input name="assignmentCriteria" type="string" value="SingleUser" />
+            <uipath:input name="recipient" type="json" />
+            <uipath:input name="customAssignees" type="string" />
+            <uipath:input name="priority" type="string" value="Medium" />
+            <uipath:input name="labels" type="string" />
+            <uipath:input name="actionCatalogName" type="string" />
+            <uipath:input name="enableActionableNotifications" type="boolean" value="false" />
+            <uipath:inputSchema type="jsonSchema"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"RunId":{"type":"string"},"ControlId":{"type":"string"},"ControlCategory":{"type":"string"},"OriginalFinding":{"type":"string"},"RecommendedRemediation":{"type":"string"},"WorkflowToExecute":{"type":"string"},"AuditNotes":{"type":"string"},"OfficerComment":{"type":"string"}},"required":["RunId","ControlId","ControlCategory","OriginalFinding","RecommendedRemediation","WorkflowToExecute","AuditNotes"]}]]></uipath:inputSchema>
+          </uipath:context>
+          <uipath:input name="HitlTaskArguments" type="json" target="bodyField"><![CDATA[{"RunId":"=vars.runId","ControlId":"=vars.controlId","ControlCategory":"=vars.controlCategory","OriginalFinding":"=vars.finding","RecommendedRemediation":"=vars.recommendedRemediation","WorkflowToExecute":"=vars.workflowToExecute","AuditNotes":"=vars.auditNotes","OfficerComment":"=vars.officerComment"}]]></uipath:input>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error3" />
+          <uipath:output name="CSOComments" type="string" source="=CSOComments" var="csoComments" />
+          <uipath:output name="Action" type="string" source="=Action" var="action2" options="[{&#34;value&#34;:&#34;Approve&#34;,&#34;label&#34;:&#34;Approve&#34;},{&#34;value&#34;:&#34;Reject&#34;,&#34;label&#34;:&#34;Reject&#34;}]" />
+          <uipath:output name="hitlTask" type="jsonSchema" source="=hitlTask" var="hitlTask2" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_5QiLzM</bpmn:incoming>
+      <bpmn:incoming>edge_qU2uZv</bpmn:incoming>
+      <bpmn:outgoing>edge_P4RRep</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:boundaryEvent id="Boundary_Timer_CSO" attachedToRef="Activity_tmSOUP">
+      <bpmn:outgoing>edge_Khz1Ly</bpmn:outgoing>
+      <bpmn:timerEventDefinition>
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT48H</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:exclusiveGateway id="Gateway_qLhO7Q">
+      <bpmn:incoming>edge_j6whaH</bpmn:incoming>
+      <bpmn:incoming>edge_gateway_risk_classification-Gateway_qLhO7QEWmJLM</bpmn:incoming>
+      <bpmn:incoming>edge_tFciDx</bpmn:incoming>
+      <bpmn:outgoing>edge_Gateway_qLhO7Q-Activity_jiuwfkzhuCvu</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:exclusiveGateway id="Gateway_W5c0oH">
+      <bpmn:incoming>edge_P4RRep</bpmn:incoming>
+      <bpmn:outgoing>edge_yiYBWE</bpmn:outgoing>
+      <bpmn:outgoing>edge_j6whaH</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="Activity_jiuwfk" name="Create ServiceNow Incidence">
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bs4cJpXwg" />
+            <uipath:input name="folderPath" type="string" value="=bindings.bXDTe6LK0" />
+            <uipath:input name="_label" type="string" value="CreateServicenowIncidence" />
+            <uipath:inputSchema type="jsonSchema"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"In_ControlID":{"type":"string"},"In_RiskLevel":{"type":"string"},"In_Findings":{"type":"string"},"In_RunID":{"type":"string"}},"required":[]}]]></uipath:inputSchema>
+          </uipath:context>
+          <uipath:input name="JobArguments" type="json" target="bodyField"><![CDATA[{"In_ControlID":null,"In_RiskLevel":null,"In_Findings":null,"In_RunID":null}]]></uipath:input>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error2" />
+          <uipath:output name="Out_IncidentID" type="string" source="=Out_IncidentID" var="outIncidentId" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_Gateway_qLhO7Q-Activity_jiuwfkzhuCvu</bpmn:incoming>
+      <bpmn:outgoing>edge_Activity_jiuwfk-Activity_URqRukxiENX2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_5mgi1p" name="Generate SOC 2 Evidence Package">
+      <bpmn:documentation>Generates audit-ready evidence package including findings, approvals and remediation history.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bb2BMCNZc" />
+            <uipath:input name="folderPath" type="string" value="=bindings.be3KVnt0V" />
+            <uipath:input name="_label" type="string" value="GenerateEvidencePackage" />
+            <uipath:inputSchema type="jsonSchema"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"In_RunId":{"type":"string"},"In_ControlId":{"type":"string"},"In_RiskLevel":{"type":"string"},"In_Finding":{"type":"string"},"In_RemediationPerformed":{"type":"string"},"In_ValidationStatus":{"type":"string"},"In_ServiceNowIncident":{"type":"string"}},"required":[]}]]></uipath:inputSchema>
+          </uipath:context>
+          <uipath:input name="JobArguments" type="json" target="bodyField"><![CDATA[{"In_RunId":"=vars.runId3","In_ControlId":"=vars.controlId3","In_RiskLevel":"=vars.riskLevel2","In_Finding":"=vars.finding","In_RemediationPerformed":"=js:\"-\"+vars.remediationDetails","In_ValidationStatus":"=vars.validationStatus","In_ServiceNowIncident":"=vars.outIncidentId"}]]></uipath:input>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error5" />
+          <uipath:output name="Out_EvidencePackagePath" type="file" source="=Out_EvidencePackagePath" var="outEvidencePackagePath" target="=orchestrator.JobAttachments" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_Activity_dWWvTW-gateway_merge_paths33BtVS</bpmn:incoming>
+      <bpmn:incoming>edge_Gateway_3IrCWU-Activity_5mgi1pQuHIyl</bpmn:incoming>
+      <bpmn:outgoing>edge_Activity_5mgi1p-Activity_gscmVNQJXIkD</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_jdLpS6" name="Revalidation Status">
+      <bpmn:incoming>edge_a0VrWz</bpmn:incoming>
+      <bpmn:outgoing>edge_XmfE01</bpmn:outgoing>
+      <bpmn:outgoing>edge_Activity_dWWvTW-gateway_merge_paths33BtVS</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:subProcess id="EventSubprocess_GlobalError" name="Global Error Handler" triggeredByEvent="true">
+      <bpmn:extensionElements>
+        <uipath:variables version="v1">
+          <uipath:inputOutput id="scriptResponse2" name="scriptResponse" type="jsonSchema" elementId="Task_LogError" />
+          <uipath:inputOutput id="error10" name="Error" type="jsonSchema" elementId="Task_LogError"><![CDATA[{"type":"object","properties":{"code":{"type":"string"},"message":{"type":"string"},"detail":{"type":"string"},"category":{"type":"string"},"status":{"type":"number"},"element":{"type":"string"}}}]]></uipath:inputOutput>
+        </uipath:variables>
+      </bpmn:extensionElements>
+      <bpmn:startEvent id="Start_GlobalError" name="Catch Any Error">
+        <bpmn:outgoing>Flow_ErrorHandler_Start</bpmn:outgoing>
+        <bpmn:errorEventDefinition errorRef="Error_GlobalCatchAll" />
+      </bpmn:startEvent>
+      <bpmn:scriptTask id="Task_LogError" name="Log Error and Notify" scriptFormat="JavaScript">
+        <bpmn:documentation>Error handlin</bpmn:documentation>
+        <bpmn:extensionElements>
+          <uipath:mapping version="v1">
+            <uipath:type value="BPMN.Variables" version="v1" />
+            <uipath:context>
+              <uipath:inputSchema type="jsonSchema"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"args":{"type":"string"}},"required":[]}]]></uipath:inputSchema>
+            </uipath:context>
+            <uipath:input name="args" type="json" target="bodyField"><![CDATA[{"args":null}]]></uipath:input>
+            <uipath:output name="scriptResponse" type="jsonSchema" source="=result.response" var="scriptResponse2" />
+            <uipath:output name="Error" type="jsonSchema" source="=Error" var="error10" />
+          </uipath:mapping>
+          <uipath:scriptVersion value="v3" />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_ErrorHandler_Start</bpmn:incoming>
+        <bpmn:outgoing>Flow_ErrorHandler_End</bpmn:outgoing>
+        <bpmn:script><![CDATA[console.log("Global error caught:", error);
+return { response: "logged" };]]></bpmn:script>
+      </bpmn:scriptTask>
+      <bpmn:endEvent id="End_GlobalError" name="Error Handled">
+        <bpmn:incoming>Flow_ErrorHandler_End</bpmn:incoming>
+        <bpmn:terminateEventDefinition />
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="Flow_ErrorHandler_Start" sourceRef="Start_GlobalError" targetRef="Task_LogError" />
+      <bpmn:sequenceFlow id="Flow_ErrorHandler_End" sourceRef="Task_LogError" targetRef="End_GlobalError" />
+    </bpmn:subProcess>
+    <bpmn:serviceTask id="Activity_TPf1Xc" name="Langchain Agent Analyzes SOC 2 Compliance">
+      <bpmn:documentation>AI agent consolidates evidence from all sources, evaluates SOC 2 controls and assigns a compliance score.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <uipath:activity version="v1">
+          <uipath:type value="Orchestrator.StartJob" version="v2" />
+          <uipath:context>
+            <uipath:input name="name" type="string" value="=bindings.bi6NUZbws" />
+            <uipath:input name="folderPath" type="string" value="=bindings.bHjLgxp6I" />
+            <uipath:input name="_label" type="string" value="LangchainAgentWorkflow" />
+            <uipath:inputSchema type="jsonSchema"><![CDATA[{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"Data":{"type":"string"}},"required":[]}]]></uipath:inputSchema>
+          </uipath:context>
+          <uipath:input name="JobArguments" type="json" target="bodyField"><![CDATA[{"Data":"=vars.outJson2"}]]></uipath:input>
+          <uipath:output name="Error" type="jsonSchema" source="=Error" var="error6" />
+          <uipath:output name="Finding" type="string" source="=Finding" var="finding" />
+          <uipath:output name="ControlId" type="string" source="=ControlId" var="controlId3" />
+          <uipath:output name="ConfidenceScore" type="string" source="=ConfidenceScore" var="confidenceScore2" />
+          <uipath:output name="RiskLevel" type="string" source="=RiskLevel" var="riskLevel2" />
+          <uipath:output name="RunId" type="string" source="=RunId" var="runId3" />
+        </uipath:activity>
+      </bpmn:extensionElements>
+      <bpmn:incoming>edge_Gateway_wRdedn-Activity_TPf1XcntDsID</bpmn:incoming>
+      <bpmn:incoming>edge_dVLvnK</bpmn:incoming>
+      <bpmn:outgoing>edge_Activity_TPf1Xc-Gateway_3IrCWUa75aBG</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:association id="assoc_start" sourceRef="start_event_timer" targetRef="anno_start" />
+    <bpmn:sequenceFlow id="flow_split_fabric" sourceRef="gateway_split_data" targetRef="task_collect_fabric" />
+    <bpmn:association id="assoc_collect_docs" sourceRef="task_collect_docs" targetRef="anno_collect_docs" />
+    <bpmn:association id="assoc_review_findings" sourceRef="task_review_findings" targetRef="anno_review_findings" />
+    <bpmn:sequenceFlow id="edge_XmfE01" name="Fail" sourceRef="Gateway_jdLpS6" targetRef="Activity_zaw14e">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=js:vars.validationStatus=="FAIL"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_Gateway_3IrCWU-task_auto_remediateck1udb" sourceRef="Gateway_3IrCWU" targetRef="task_auto_remediate">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=js:vars.confidenceScore2 !== "100"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_task_auto_remediate-gateway_risk_classificationfuTIs6" name="" sourceRef="task_auto_remediate" targetRef="gateway_risk_classification" />
+    <bpmn:sequenceFlow id="edge_5QiLzM" name="Escalate" sourceRef="Gateway_fCVSXe" targetRef="Activity_tmSOUP">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=js:vars.action=="Escalate"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_G3ypEn" sourceRef="task_review_findings" targetRef="Gateway_fCVSXe" />
+    <bpmn:sequenceFlow id="edge_P4RRep" sourceRef="Activity_tmSOUP" targetRef="Gateway_W5c0oH" />
+    <bpmn:sequenceFlow id="edge_Activity_URqRuk-Activity_dWWvTWHT5k1r" sourceRef="Activity_URqRuk" targetRef="Activity_dWWvTW" />
+    <bpmn:sequenceFlow id="edge_Activity_dWWvTW-gateway_merge_paths33BtVS" name="Pass" sourceRef="Gateway_jdLpS6" targetRef="Activity_5mgi1p">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=js:vars.validationStatus=="FAIL"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_yiYBWE" name="Reject" sourceRef="Gateway_W5c0oH" targetRef="task_auto_remediate">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=js:vars.action2=="Reject"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_j6whaH" name="Approve" sourceRef="Gateway_W5c0oH" targetRef="Gateway_qLhO7Q">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=js:vars.action2=="Approve"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_a6I7xF" name="High Risk" sourceRef="gateway_risk_classification" targetRef="task_review_findings">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=js:Number(vars.confidenceScore) &lt; 85</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_Gateway_qLhO7Q-Activity_jiuwfkzhuCvu" sourceRef="Gateway_qLhO7Q" targetRef="Activity_jiuwfk" />
+    <bpmn:sequenceFlow id="edge_Activity_jiuwfk-Activity_URqRukxiENX2" sourceRef="Activity_jiuwfk" targetRef="Activity_URqRuk" />
+    <bpmn:sequenceFlow id="edge_gateway_risk_classification-Gateway_qLhO7QEWmJLM" name="Low Risk" sourceRef="gateway_risk_classification" targetRef="Gateway_qLhO7Q">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=js:Number(vars.confidenceScore) &lt; 100 &amp;&amp; Number(vars.confidenceScore) &gt; 85</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_tFciDx" name="Approve" sourceRef="Gateway_fCVSXe" targetRef="Gateway_qLhO7Q">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=js:vars.action=="Approve"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_Activity_5mgi1p-Activity_gscmVNQJXIkD" sourceRef="Activity_5mgi1p" targetRef="Activity_gscmVN" />
+    <bpmn:sequenceFlow id="edge_Gateway_3IrCWU-Activity_5mgi1pQuHIyl" name="Pass" sourceRef="Gateway_3IrCWU" targetRef="Activity_5mgi1p">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=js:vars.confidenceScore2 == "100"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="edge_a0VrWz" sourceRef="Activity_dWWvTW" targetRef="Gateway_jdLpS6" />
+    <bpmn:sequenceFlow id="edge_task_collect_fabric-Gateway_wRdednFpqGrn" sourceRef="task_collect_fabric" targetRef="Gateway_wRdedn" />
+    <bpmn:sequenceFlow id="edge_Gateway_wRdedn-Activity_TPf1XcntDsID" name="Pass" sourceRef="Gateway_wRdedn" targetRef="Activity_TPf1Xc" />
+    <bpmn:sequenceFlow id="edge_Activity_TPf1Xc-Gateway_3IrCWUa75aBG" name="Pass" sourceRef="Activity_TPf1Xc" targetRef="Gateway_3IrCWU" />
+    <bpmn:sequenceFlow id="edge_JbS9bX" sourceRef="task_collect_cloud" targetRef="Gateway_wRdedn" />
+    <bpmn:association id="edge_Activity_TPf1Xc-Text_UwTilb" sourceRef="Activity_TPf1Xc" targetRef="Text_UwTilb" />
+    <bpmn:sequenceFlow id="edge_h0fD9x" sourceRef="Activity_zaw14e" targetRef="task_auto_remediate" />
+    <bpmn:sequenceFlow id="edge_Activity_gscmVN-end_eventjhO5O7" sourceRef="Activity_gscmVN" targetRef="end_event" />
+    <bpmn:sequenceFlow id="edge_qU2uZv" name="Approval Timeout (24h)" sourceRef="Boundary_Timer_Review" targetRef="Activity_tmSOUP" />
+    <bpmn:sequenceFlow id="edge_Khz1Ly" name="Approval Timeout (24h)" sourceRef="Boundary_Timer_CSO" targetRef="task_review_findings" />
+    <bpmn:association id="edge_task_auto_remediate-Text_RfM9y6" sourceRef="task_auto_remediate" targetRef="Text_RfM9y6" />
+    <bpmn:association id="edge_Activity_tmSOUP-Text_fjtf7a" sourceRef="Activity_tmSOUP" targetRef="Text_fjtf7a" />
+    <bpmn:association id="edge_Activity_URqRuk-Text_jJPlAN" sourceRef="Activity_URqRuk" targetRef="Text_jJPlAN" />
+    <bpmn:association id="edge_Activity_dWWvTW-Text_LKrHKW" sourceRef="Activity_dWWvTW" targetRef="Text_LKrHKW" />
+    <bpmn:sequenceFlow id="edge_ibzDp8" sourceRef="gateway_split_data" targetRef="task_collect_cloud" />
+    <bpmn:sequenceFlow id="edge_lTVgGG" sourceRef="gateway_split_data" targetRef="task_collect_docs" />
+    <bpmn:sequenceFlow id="edge_dVLvnK" sourceRef="task_collect_docs" targetRef="Activity_TPf1Xc" />
+    <bpmn:association id="edge_Gateway_wRdedn-Text_XhUrZX" sourceRef="Gateway_wRdedn" targetRef="Text_XhUrZX" />
+    <bpmn:association id="edge_Activity_5mgi1p-Text_ZnKScu" sourceRef="Activity_5mgi1p" targetRef="Text_ZnKScu" />
+    <bpmn:sequenceFlow id="edge_vew6o1" sourceRef="start_event_timer" targetRef="task_collect_docs" />
+    <bpmn:textAnnotation id="anno_start">
+      <bpmn:text>Runs on a scheduled interval (e.g., every 24hrs) or triggered on-demand via webhook</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="anno_collect_fabric">
+      <bpmn:text>Queries internal DB registries and WebAPP for processing records</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="anno_collect_docs">
+      <bpmn:text>Uses UiPath Document Understanding to extract data from PDFs, contracts &amp; audit reports</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="anno_review_findings">
+      <bpmn:text>Maestro pauses thread; Officer reviews via UiPath Action Center</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="Text_UwTilb">
+      <bpmn:text>LangChain / UiPath Agent Builder evaluates controls and scores 0–100%</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="Text_RfM9y6">
+      <bpmn:text>AI recommends remediation based on
+risk score, failed controls and policy rules.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="Text_fjtf7a">
+      <bpmn:text>Critical findings are escalated for
+executive approval before remediation.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="Text_jJPlAN">
+      <bpmn:text>Robot executes predefined remediation</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="Text_LKrHKW">
+      <bpmn:text>Agent verifies whether remediation resolved the control failure using updated evidence.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="Text_XhUrZX">
+      <bpmn:text>Evidence Collector merges all available evidence. Unavailable sources are logged and assessment continues with partial evidence.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="Text_ZnKScu">
+      <bpmn:text>Generates auditor-ready HTML evidence package containing:
+• Findings
+• Evidence
+• Remediation
+• Validation Results
+• Audit Readiness Score</bpmn:text>
+    </bpmn:textAnnotation>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="S_start_event_timer" bpmnElement="start_event_timer">
+        <dc:Bounds x="-48" y="470" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-48" y="511" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_anno_start" bpmnElement="anno_start">
+        <dc:Bounds x="-96" y="368" width="150" height="60" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-96" y="433" width="150" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_gateway_split_data" bpmnElement="gateway_split_data">
+        <dc:Bounds x="48" y="464" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="48" y="519" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_task_collect_cloud" bpmnElement="task_collect_cloud">
+        <dc:Bounds x="144" y="272" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="144" y="357" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_task_collect_fabric" bpmnElement="task_collect_fabric">
+        <dc:Bounds x="144" y="448" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="144" y="533" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_anno_collect_fabric" bpmnElement="anno_collect_fabric">
+        <dc:Bounds x="128" y="544" width="150" height="60" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="128" y="609" width="150" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_task_collect_docs" bpmnElement="task_collect_docs">
+        <dc:Bounds x="144" y="640" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="144" y="725" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_anno_collect_docs" bpmnElement="anno_collect_docs">
+        <dc:Bounds x="112" y="768" width="166" height="76" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="112" y="849" width="166" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_gateway_risk_classification" bpmnElement="gateway_risk_classification">
+        <dc:Bounds x="656" y="560" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="656" y="615" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_task_auto_remediate" bpmnElement="task_auto_remediate">
+        <dc:Bounds x="496" y="544" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="496" y="629" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_task_review_findings" bpmnElement="task_review_findings">
+        <dc:Bounds x="624" y="704" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="624" y="789" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Boundary_Timer_Review" bpmnElement="Boundary_Timer_Review">
+        <dc:Bounds x="656" y="784" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="656" y="825" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_anno_review_findings" bpmnElement="anno_review_findings">
+        <dc:Bounds x="352" y="960" width="150" height="60" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="352" y="1025" width="150" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_end_event" bpmnElement="end_event">
+        <dc:Bounds x="1360" y="294" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1360" y="335" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Gateway_wRdedn" bpmnElement="Gateway_wRdedn">
+        <dc:Bounds x="288" y="464" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="288" y="519" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Gateway_fCVSXe" bpmnElement="Gateway_fCVSXe">
+        <dc:Bounds x="832" y="720" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="832" y="775" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_gscmVN" bpmnElement="Activity_gscmVN">
+        <dc:Bounds x="1200" y="272" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1200" y="357" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_URqRuk" bpmnElement="Activity_URqRuk">
+        <dc:Bounds x="948.478976" y="417" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="948.478976" y="502" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_dWWvTW" bpmnElement="Activity_dWWvTW">
+        <dc:Bounds x="1088" y="416" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1088" y="501" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_zaw14e" bpmnElement="Activity_zaw14e">
+        <dc:Bounds x="880" y="1072" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="880" y="1157" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Gateway_3IrCWU" bpmnElement="Gateway_3IrCWU">
+        <dc:Bounds x="528" y="464" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="528" y="519" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_tmSOUP" bpmnElement="Activity_tmSOUP">
+        <dc:Bounds x="800" y="880" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="800" y="965" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Boundary_Timer_CSO" bpmnElement="Boundary_Timer_CSO">
+        <dc:Bounds x="832" y="960" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="832" y="1001" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Gateway_qLhO7Q" bpmnElement="Gateway_qLhO7Q">
+        <dc:Bounds x="832" y="560" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="832" y="615" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Gateway_W5c0oH" bpmnElement="Gateway_W5c0oH">
+        <dc:Bounds x="944" y="896" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="944" y="951" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_jiuwfk" bpmnElement="Activity_jiuwfk">
+        <dc:Bounds x="807" y="416" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="807" y="501" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_5mgi1p" bpmnElement="Activity_5mgi1p">
+        <dc:Bounds x="1040" y="272" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1040" y="357" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Gateway_jdLpS6" bpmnElement="Gateway_jdLpS6">
+        <dc:Bounds x="1232" y="432" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1232" y="487" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_EventSubprocess_GlobalError" bpmnElement="EventSubprocess_GlobalError" isExpanded="true">
+        <dc:Bounds x="-80" y="912" width="400" height="200" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-80" y="1117" width="400" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Start_GlobalError" bpmnElement="Start_GlobalError">
+        <dc:Bounds x="-40" y="994" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-40" y="1035" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Task_LogError" bpmnElement="Task_LogError">
+        <dc:Bounds x="30" y="972" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="30" y="1057" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_End_GlobalError" bpmnElement="End_GlobalError">
+        <dc:Bounds x="190" y="994" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="190" y="1035" width="36" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Activity_TPf1Xc" bpmnElement="Activity_TPf1Xc">
+        <dc:Bounds x="384" y="448" width="100" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="384" y="533" width="100" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Text_UwTilb" bpmnElement="Text_UwTilb">
+        <dc:Bounds x="384" y="272" width="132" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="384" y="357" width="132" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Text_RfM9y6" bpmnElement="Text_RfM9y6">
+        <dc:Bounds x="336" y="768" width="132" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="336" y="853" width="132" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Text_fjtf7a" bpmnElement="Text_fjtf7a">
+        <dc:Bounds x="1072" y="992" width="148" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1072" y="1077" width="148" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Text_jJPlAN" bpmnElement="Text_jJPlAN">
+        <dc:Bounds x="944" y="144" width="116" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="944" y="229" width="116" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Text_LKrHKW" bpmnElement="Text_LKrHKW">
+        <dc:Bounds x="1152" y="560" width="132" height="80" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1152" y="645" width="132" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Text_XhUrZX" bpmnElement="Text_XhUrZX">
+        <dc:Bounds x="160" y="144" width="308" height="64" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="160" y="213" width="308" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S_Text_ZnKScu" bpmnElement="Text_ZnKScu">
+        <dc:Bounds x="1184" y="112" width="228" height="128" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1184" y="245" width="228" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_assoc_start" bpmnElement="assoc_start">
+        <di:waypoint x="-28.2" y="470" />
+        <di:waypoint x="-24.000000000000004" y="428" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_split_fabric" bpmnElement="flow_split_fabric">
+        <di:waypoint x="98" y="489" />
+        <di:waypoint x="144" y="488" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_assoc_collect_docs" bpmnElement="assoc_collect_docs">
+        <di:waypoint x="194.31746031746033" y="720" />
+        <di:waypoint x="194.69841269841268" y="768" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_assoc_review_findings" bpmnElement="assoc_review_findings">
+        <di:waypoint x="633.8373983739838" y="784" />
+        <di:waypoint x="457.1219512195122" y="960" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_XmfE01" bpmnElement="edge_XmfE01">
+        <di:waypoint x="1282" y="457" />
+        <di:waypoint x="1302" y="457" />
+        <di:waypoint x="1302" y="1112" />
+        <di:waypoint x="980" y="1112" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Gateway_3IrCWU-task_auto_remediateck1udb" bpmnElement="edge_Gateway_3IrCWU-task_auto_remediateck1udb">
+        <di:waypoint x="553" y="514" />
+        <di:waypoint x="553" y="534" />
+        <di:waypoint x="549.5" y="534" />
+        <di:waypoint x="549.5" y="524" />
+        <di:waypoint x="546" y="524" />
+        <di:waypoint x="546" y="544" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_task_auto_remediate-gateway_risk_classificationfuTIs6" bpmnElement="edge_task_auto_remediate-gateway_risk_classificationfuTIs6">
+        <di:waypoint x="596" y="584" />
+        <di:waypoint x="656" y="585" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_5QiLzM" bpmnElement="edge_5QiLzM">
+        <di:waypoint x="857" y="770" />
+        <di:waypoint x="857" y="825" />
+        <di:waypoint x="850" y="825" />
+        <di:waypoint x="850" y="880" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_G3ypEn" bpmnElement="edge_G3ypEn">
+        <di:waypoint x="724" y="744" />
+        <di:waypoint x="832" y="745" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_P4RRep" bpmnElement="edge_P4RRep">
+        <di:waypoint x="900" y="920" />
+        <di:waypoint x="944" y="921" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_URqRuk-Activity_dWWvTWHT5k1r" bpmnElement="edge_Activity_URqRuk-Activity_dWWvTWHT5k1r">
+        <di:waypoint x="1048.4789759999999" y="457" />
+        <di:waypoint x="1088" y="456" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_dWWvTW-gateway_merge_paths33BtVS" bpmnElement="edge_Activity_dWWvTW-gateway_merge_paths33BtVS">
+        <di:waypoint x="1257" y="432" />
+        <di:waypoint x="1257" y="392" />
+        <di:waypoint x="1090" y="392" />
+        <di:waypoint x="1090" y="352" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_yiYBWE" bpmnElement="edge_yiYBWE">
+        <di:waypoint x="969" y="946" />
+        <di:waypoint x="969" y="1056" />
+        <di:waypoint x="546" y="1056" />
+        <di:waypoint x="546" y="624" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_j6whaH" bpmnElement="edge_j6whaH">
+        <di:waypoint x="994" y="921" />
+        <di:waypoint x="1014" y="921" />
+        <di:waypoint x="1014" y="585" />
+        <di:waypoint x="882" y="585" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_a6I7xF" bpmnElement="edge_a6I7xF">
+        <di:waypoint x="681" y="610" />
+        <di:waypoint x="681" y="657" />
+        <di:waypoint x="674" y="657" />
+        <di:waypoint x="674" y="704" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Gateway_qLhO7Q-Activity_jiuwfkzhuCvu" bpmnElement="edge_Gateway_qLhO7Q-Activity_jiuwfkzhuCvu">
+        <di:waypoint x="857" y="560" />
+        <di:waypoint x="857" y="496" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_jiuwfk-Activity_URqRukxiENX2" bpmnElement="edge_Activity_jiuwfk-Activity_URqRukxiENX2">
+        <di:waypoint x="907" y="456" />
+        <di:waypoint x="948.478976" y="457" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_gateway_risk_classification-Gateway_qLhO7QEWmJLM" bpmnElement="edge_gateway_risk_classification-Gateway_qLhO7QEWmJLM">
+        <di:waypoint x="706" y="585" />
+        <di:waypoint x="832" y="585" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_tFciDx" bpmnElement="edge_tFciDx">
+        <di:waypoint x="857" y="720" />
+        <di:waypoint x="857" y="610" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_5mgi1p-Activity_gscmVNQJXIkD" bpmnElement="edge_Activity_5mgi1p-Activity_gscmVNQJXIkD">
+        <di:waypoint x="1140" y="312" />
+        <di:waypoint x="1200" y="312" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Gateway_3IrCWU-Activity_5mgi1pQuHIyl" bpmnElement="edge_Gateway_3IrCWU-Activity_5mgi1pQuHIyl">
+        <di:waypoint x="553" y="464" />
+        <di:waypoint x="553" y="312" />
+        <di:waypoint x="1040" y="312" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_a0VrWz" bpmnElement="edge_a0VrWz">
+        <di:waypoint x="1188" y="456" />
+        <di:waypoint x="1232" y="457" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_Flow_ErrorHandler_Start" bpmnElement="Flow_ErrorHandler_Start">
+        <di:waypoint x="-4" y="1012" />
+        <di:waypoint x="30" y="1012" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_Flow_ErrorHandler_End" bpmnElement="Flow_ErrorHandler_End">
+        <di:waypoint x="130" y="1012" />
+        <di:waypoint x="190" y="1012" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_task_collect_fabric-Gateway_wRdednFpqGrn" bpmnElement="edge_task_collect_fabric-Gateway_wRdednFpqGrn">
+        <di:waypoint x="244" y="488" />
+        <di:waypoint x="288" y="489" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Gateway_wRdedn-Activity_TPf1XcntDsID" bpmnElement="edge_Gateway_wRdedn-Activity_TPf1XcntDsID">
+        <di:waypoint x="338" y="489" />
+        <di:waypoint x="384" y="488" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_TPf1Xc-Gateway_3IrCWUa75aBG" bpmnElement="edge_Activity_TPf1Xc-Gateway_3IrCWUa75aBG">
+        <di:waypoint x="484" y="488" />
+        <di:waypoint x="528" y="489" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_JbS9bX" bpmnElement="edge_JbS9bX">
+        <di:waypoint x="244" y="312" />
+        <di:waypoint x="266" y="312" />
+        <di:waypoint x="266" y="489" />
+        <di:waypoint x="288" y="489" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_TPf1Xc-Text_UwTilb" bpmnElement="edge_Activity_TPf1Xc-Text_UwTilb">
+        <di:waypoint x="437.6363636363636" y="448" />
+        <di:waypoint x="446.3636363636364" y="352" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_h0fD9x" bpmnElement="edge_h0fD9x">
+        <di:waypoint x="880" y="1112" />
+        <di:waypoint x="476" y="1112" />
+        <di:waypoint x="476" y="584" />
+        <di:waypoint x="496" y="584" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_gscmVN-end_eventjhO5O7" bpmnElement="edge_Activity_gscmVN-end_eventjhO5O7">
+        <di:waypoint x="1300" y="312" />
+        <di:waypoint x="1360" y="312" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_qU2uZv" bpmnElement="edge_qU2uZv">
+        <di:waypoint x="674" y="820" />
+        <di:waypoint x="674" y="920" />
+        <di:waypoint x="800" y="920" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Khz1Ly" bpmnElement="edge_Khz1Ly">
+        <di:waypoint x="850" y="996" />
+        <di:waypoint x="850" y="1016" />
+        <di:waypoint x="604" y="1016" />
+        <di:waypoint x="604" y="744" />
+        <di:waypoint x="624" y="744" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_task_auto_remediate-Text_RfM9y6" bpmnElement="edge_task_auto_remediate-Text_RfM9y6">
+        <di:waypoint x="520.2857142857142" y="624" />
+        <di:waypoint x="427.7142857142857" y="768" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_tmSOUP-Text_fjtf7a" bpmnElement="edge_Activity_tmSOUP-Text_fjtf7a">
+        <di:waypoint x="900" y="938.918918918919" />
+        <di:waypoint x="1072" y="1004" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_URqRuk-Text_jJPlAN" bpmnElement="edge_Activity_URqRuk-Text_jJPlAN">
+        <di:waypoint x="998.994876952381" y="417" />
+        <di:waypoint x="1001.484099047619" y="224" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_dWWvTW-Text_LKrHKW" bpmnElement="edge_Activity_dWWvTW-Text_LKrHKW">
+        <di:waypoint x="1160.2222222222222" y="496" />
+        <di:waypoint x="1195.7777777777778" y="560" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_ibzDp8" bpmnElement="edge_ibzDp8">
+        <di:waypoint x="73" y="464" />
+        <di:waypoint x="73" y="312" />
+        <di:waypoint x="144" y="312" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_lTVgGG" bpmnElement="edge_lTVgGG">
+        <di:waypoint x="73" y="514" />
+        <di:waypoint x="73" y="680" />
+        <di:waypoint x="144" y="680" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_dVLvnK" bpmnElement="edge_dVLvnK">
+        <di:waypoint x="244" y="680" />
+        <di:waypoint x="434" y="680" />
+        <di:waypoint x="434" y="528" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Gateway_wRdedn-Text_XhUrZX" bpmnElement="edge_Gateway_wRdedn-Text_XhUrZX">
+        <di:waypoint x="313.07987220447285" y="464" />
+        <di:waypoint x="313.89776357827475" y="208" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_Activity_5mgi1p-Text_ZnKScu" bpmnElement="edge_Activity_5mgi1p-Text_ZnKScu">
+        <di:waypoint x="1140" y="279.3076923076923" />
+        <di:waypoint x="1200.1176470588236" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_edge_vew6o1" bpmnElement="edge_vew6o1">
+        <di:waypoint x="-30" y="506" />
+        <di:waypoint x="-30" y="740" />
+        <di:waypoint x="194" y="740" />
+        <di:waypoint x="194" y="720" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
